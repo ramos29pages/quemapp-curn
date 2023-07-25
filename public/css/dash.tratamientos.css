@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;500;700&family=Mochiy+Pop+One&family=Montserrat+Alternates:wght@100;200;400;600;800&display=swap');
+
+:root{
+    --colorh1 : rgb(226, 226, 226);
+    --gradiente: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(20,30,48,1) 0%, rgba(36,59,85,1) 100%);
+    
+    --colorInput: rgb(123, 50, 50);
+    --QUEM: rgb(108, 137, 222);
+    --fondo: rgb(235, 240, 269);
+      --primary: #243b55;
+      --hoverBotones: #121d29;
+    --fuente: roboto, sans-serif;
+    --letraNormal: 0.95rem;
+    --letraPeuqeña: 0.75rem;
+  }  
+
+   /*
+
+    font-family: 'Mochiy Pop One', sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Montserrat Alternates', sans-serif;
+  
+  */
+
+*{
+    box-sizing: border-box;
+}
+
+h2{
+    color: var(--QUEM);
+    /*background-color:  crimson;*/
+    padding: 5px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 600;
+}
+.contenedor{
+    border-radius: 20px;
+    width: 100%;
+    height: 100%;
+    padding: 1px;
+}
+
+.contenedor .respuestas{
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    height: auto;
+    max-height: 72vh;
+    border-radius: 10px;
+    overflow-y:scroll;
+    overflow-x: hidden;
+    scrollbar-color: crimson;
+}
+
+.respuestas .respuesta{
+    padding: 10px;
+    margin-left: 70px;
+    width: 95%;
+    height: 100%;
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-size: 14px;
+    margin: 10px;
+    background-color: rgb(227, 255, 215); /*green container*/
+    border-radius: 15px;
+}
+
+.respuesta .titulo{
+    font-weight: 600;
+    color: var(--QUEM);
+    margin-bottom: 5px;
+}

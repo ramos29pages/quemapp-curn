@@ -1,0 +1,475 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;500;700&family=Mochiy+Pop+One&family=Montserrat+Alternates:wght@100;200;400;600;800&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700&display=swap');
+
+:root{
+    --colorh1 : rgb(226, 226, 226);
+    --gradiente: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(20,30,48,1) 0%, rgba(36,59,85,1) 100%);
+    
+    --colorInput: rgb(123, 50, 50);
+    --QUEM: rgb(108, 137, 222);
+    --fondo: rgb(235, 240, 269);
+      --primary: #243b55;
+      --hoverBotones: #121d29;
+    --fuente: roboto, sans-serif;
+    --letraNormal: 0.95rem;
+    --letraPeuqeña: 0.75rem;
+  }  
+
+
+  /*
+
+    font-family: 'Mochiy Pop One', sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Montserrat Alternates', sans-serif;
+  
+  */
+
+  *{
+    box-sizing: border-box;
+  }
+
+  .cont-logo .quemappText{
+    font-family: 'Mochiy Pop One', sans-serif;;
+}
+
+  .tab-pane hr{
+    color: rgb(212, 212, 212);
+    outline: none;
+    margin: 8px;
+  }
+
+  .tab-pane{
+    background: var(--fondo);
+    
+  }
+  
+  .tab-pane > .cont-nameUser{
+    padding: 1px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    top: 0px;
+
+  }
+
+  .tab-pane > .cont-nameUser > .infoUser{
+    background: transparent
+  }
+
+
+  .tab-pane > .cont-nameUser .infoUser h2{
+    color: var(--QUEM);
+    font-weight: 600;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 20px;
+  }
+
+  .tab-pane > .cont-nameUser .infoUser #nameUser{
+    color: #292929
+    
+  }
+
+  .tab-pane > .cont-nameUser .infoUser p{
+    color: var(--QUEM);
+    font-weight: 400;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 13px;
+  }
+
+  .tab-pane > .cont-nameUser .close-session{
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    transition: all .2s ease-in;
+  }
+
+  .tab-pane > .cont-nameUser .close-session i:hover{
+   transform: scale(1.25);
+   transition: all .2s ease-in;
+   cursor: pointer;
+  }
+
+  .tab-pane h3{
+    color: var(--QUEM);
+    font-weight: 600;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 20px;
+  }
+
+  .tab-pane #title{
+    font-size: 18px;
+    margin-top: 5px;
+    padding-top: 5px;
+    background-color: white;
+    text-align: center;
+    color: gray;
+    font-weight: bold;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+  }
+
+  .tab-pane .cont-contenido{
+    width: 100%;
+    height: 85%;
+    display: grid;
+    gap: 2px;
+    grid-template-columns: 1fr;
+    
+  }
+
+  .caracteristicas{
+    height: 100%;
+    width: 100%;
+  }
+
+  .caracteristicas  form{
+    display: grid;
+    place-content: center;
+    grid-template-columns: 1fr;
+    height: 90%;
+    width: 100%;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+  }
+
+  .caracteristicas form .column1 .datos-paciente{
+    background: white;
+    height: auto;
+    margin: 15px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 30px repeat(3, 1fr);
+    padding: 5px;
+    width: 93%;
+    border-radius: 20px;
+    padding: 10px;
+    /*box-shadow: 0px 0px 8px 1px rgba(104, 104, 104, 0.284);*/
+    color: gray;
+  }
+
+  .caracteristicas form .column1 .datos-paciente .entrada{
+    margin: 3px;
+    height: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .caracteristicas form  .column1 .datos-paciente .entrada input{
+    background-color: rgb(224, 224, 224);
+    outline: none;
+    border: none;
+    height: 95%;
+    padding: 5px;
+    border-radius: 7px;
+    text-align: center;
+  }
+
+  .caracteristicas form .column1 .datos-paciente .entrada input::placeholder{
+    color: rgb(157, 155, 155);
+  }
+
+  .caracteristicas form .column1 .agente-etiologico{
+    background: white;
+    height: auto;
+    margin: 0px 15px 15px 15px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 30px repeat(3, 1fr);
+    padding: 5px;
+    width: 93%;
+    border-radius: 20px;
+    padding: 10px;
+    color: gray;
+  }
+
+  .caracteristicas form .column1 .agente-etiologico .entrada{
+    margin: 3px;
+    height: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .caracteristicas form .column1 .agente-etiologico .entrada select {
+    background-color: rgb(224, 224, 224);
+    outline: none;
+    border: none;
+    height: 95%;
+    width: 150px;
+    padding: 5px;
+    border-radius: 7px;
+    text-align: center;
+    color: gray;
+  }
+
+  select:hover{
+    cursor: pointer;
+  }
+
+  .column1{
+    position: relative;
+  }
+
+  .caracteristicas form  .column1 .cont-boton{
+    display: flex;
+    justify-content: end;
+    height: 40px;
+    width: 95%;
+    position: absolute;
+  }
+  .caracteristicas form .column1 .cont-boton button{
+    background-color: var(--primary);
+    color: whitesmoke;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 200;
+    transition: all .3s ease;
+    width: 50%;
+    height: 100%;
+    border: none;
+  }
+
+  .caracteristicas form .column1 .cont-boton button:hover{
+    background-color: var(--hoverBotones);
+    font-size: 16px;
+    font-weight: 300;
+    cursor: pointer;
+    transition: all .3s ease;
+  }
+
+  form .entrada label {
+    width: 150px;
+    text-align: center;
+  }
+
+
+  /*PARTE EUMADURAS*/
+
+  form{
+    padding: 5px;
+  }
+
+  form .column2{
+    height: 82vh;
+    width: 100%;
+    display: grid;
+    justify-content: center;
+    display: none;
+  }
+
+  form .column2 .cont-tipos{
+    height: 75vh;
+    width: 90vw;
+    margin-top: 20px;
+  }
+
+  .quemaduras{
+    background: white;
+    padding: 5px;
+    border-radius: 20px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    margin-bottom: 10px;
+  }
+
+  .quemaduras #title{
+    color: gray;
+  }
+  
+  .quemadura{
+    padding: 5px;
+    border-radius: 15px;
+    margin: 5px;
+  }
+
+  .quemadura .titulo{
+    text-align: center;
+    font-weight: 400;
+    color: black;
+  }
+
+  .quemadura .desc {
+    text-align: center;
+    font-size: 13px;
+    color: var(--QUEM);
+    font-weight: 600;
+  }
+
+
+.quemadura .check{
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  font-size: 17px;
+  padding: 5px;
+  color: gray;
+  font-weight: 600;
+}
+
+.quemadura .check p{
+  width: 80%;
+  height: 38px;
+  font-size: 14px;
+  padding: 2px;
+}
+
+.quemadura .check > #grado1{
+  width: 25px;
+  height: 25px;
+  border: none;
+  outline: none;
+  background: red;
+}
+
+.quemadura .check > #grado1[type="radio"]:checked{
+  background-color: #172636;
+}
+
+
+  .cont-botones{
+    padding: 10px;
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .cont-botones > .anterior {
+    background-color: gray;
+    color: white;
+    width: 150px;
+    height: 40px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+  }
+
+  .anterior:hover{
+    background-color: var(--hoverBotones);
+    color: white;
+    cursor: pointer;
+    transition: all .2s ease-in;
+    font-size: 16px;
+  }
+
+  .cont-botones .siguiente{
+    
+    background-color: var(--primary);
+    color: whitesmoke;
+    width: 150px;
+    height: 40px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+  }
+
+  .siguiente:hover{
+    background-color: var(--hoverBotones);
+    color: white;
+    cursor: pointer;
+    transition: all .2s ease-in;
+    font-size: 16px;
+  }
+
+  /*PARTE DEL CUERPO*/
+
+  form .column3{
+    position: relative;
+    height: 80vh;
+    width: 100%;
+    display: grid;
+    display: none;
+  }
+
+  .cuerpo{
+    height: auto;
+    width: 100%;
+    display: grid;
+    justify-content: center;
+    position: relative;
+  }
+
+  .cuerpo #indic{
+    background-color: rgba(207, 169, 169, 0.83);
+    text-align: center;
+    color: red;
+    font-weight: 400;
+    padding: 10px;
+  }
+
+  .cuerpo .body{
+    background-color: white;
+    max-height: 60vh;
+    padding: 20px;
+    border-radius: 20px;
+  }
+
+  .cuerpo .body h3{
+    color: var(--QUEM);
+    margin: 10px;
+  }
+
+  .cuerpo label{
+    margin: 8px;
+    text-align: center;
+  }
+
+  .cuerpo select{
+    height: 40px;
+    padding: 8px;
+    color: gray;
+  }
+
+  .cuerpo .cont-botones{
+    position:absolute;
+    bottom: 60px;
+    height: 40px;
+    width: 100%;
+    padding: 0%;
+  }
+
+  .cuerpo .cont-botones .anteriorCuerpo{
+    background-color: gray;
+    color: white;
+    width: 150px;
+    height: 100%;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+  }
+
+  .cuerpo .cont-botones .anteriorCuerpo:hover{
+    background-color: var(--hoverBotones);
+    color: white;
+    cursor: pointer;
+    transition: all .2s ease-in;
+    font-size: 16px;
+  }
+
+  .cuerpo .cont-botones .siguienteCuerpo{
+    background-color: var(--primary);
+    color: white;
+    width: 150px;
+    height: 100%;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+  }
+
+  .cuerpo .cont-botones .siguienteCuerpo:hover{
+    background-color: var(--hoverBotones);
+    color: white;
+    cursor: pointer;
+    transition: all .2s ease-in;
+    font-size: 15px;
+  }
+  
+  
+  /*PANTALLAS TABLETS Y MAS*/
+  /* Small devices (portrait tablets and large phones, 600px and up) */

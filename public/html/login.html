@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN</title>
+    <link rel="stylesheet" type="text/css" href="../css/login.css" />
+    <script
+      src="https://kit.fontawesome.com/45abf6fd04.js"
+      crossorigin="anonymous"
+    ></script>
+</head>
+<body>
+    <div class="cont-formulario">
+
+        <form action="" class="formulario">
+  
+          <div class="cont-icono">
+            <i id="icono"class="fa-solid fa-users-line"></i>
+          </div>
+          <h3 class="form_titulo">Inicio de sesion</h3>
+          <div class="show-first">
+            
+            <div class="row">
+
+              <p class="info infoName">info</p>
+              <div class="form_div">
+                <input type="text" class="form_input" id="name" name="name" placeholder=" " value="" />
+                <label for="name" class="form_label">Nombre de usuario</label>
+                <i class="fa-solid fa-user icon-input"></i>
+              </div>
+
+              <p class="info infoPass">info</p>
+              <div class="form_div">
+                <input type="password" id="password" name="password" class="form_input" placeholder=" " />
+                <label for="password" class="form_label">Ingresa tu contraseña</label>
+                <i class="fa-solid fa-lock icon-input"></i>
+              </div>
+            </div>
+  
+          <div class="cont-button">
+            <input type="button" class="form_boton boton-registro" value="Ingresar" />
+          </div>
+
+          <p style="font-size: 13px"><a href="/contactos">Olvidé mi contraseña</a></p>
+          <p class="top" style="font-size: 13px;" >¿No tienes cuenta?</p>
+          <p style="font-size: 13px;">Puedes <a href="./registrar/registrar.html">crear una cuenta.</a>
+  
+          <h1 class="quemappText">Q<i id="img-icon" class="fa-solid fa-fire-flame-curved"></i>emApp</h1>
+        </form>
+
+        <div class="pop-ok">
+          <p class="text">Cuenta creada con exito.
+          </p>
+          <button>Vamos</button>
+        </div>
+      </div>
+      <script src="../login.js"></script>
+</body>
+</html>

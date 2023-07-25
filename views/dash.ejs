@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link rel="stylesheet" id="__vista" href="" />
+    <link rel="stylesheet" id="" href="../css/info.reg.css" />
+    <!--
+
+    -->
+
+    <!-- Live refresh CSS, HTML and JS in browser. -->
+    <!-- <script src="live.js" ></script> -->
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+    <script src="../js/responsive.js"></script>
+    <link rel="stylesheet" id="__tratamiento" href="">
+    <link rel="stylesheet" id="__registro" href="">
+    <link rel="stylesheet" id="__registrar" href="">
+    <link rel="stylesheet" href="../css/loader.css">
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-bold-straight/css/uicons-bold-straight.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-solid-straight/css/uicons-solid-straight.css'>
+
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
+    <script
+      src="https://kit.fontawesome.com/45abf6fd04.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="loader-section">
+        <span class="loader"></span>
+   </div>
+
+      <div class="tab-container">
+       <!--@CONTENIDO DE LA PAGINA-->
+        <div class="tab-content">
+
+            <!--@REGISTRAR SINTOMAS-->
+            <div class="tab-pane animate__animated animate__fadeIn animate__faster active" data-tab="section1">
+                <div class="cont-nameUser">
+                    <div class="infoUser">
+                        <h2>Hola, <span id="nameUser">Daniel Ramos</span></h2>
+                        <p>Administrador</p>
+                    </div>
+                    <div class="close-session">
+                        <i title="Cerrar Sesion" class="fi fi-ss-sign-out-alt"></i>
+                    </div>
+                </div>
+                <hr>
+                <h3>Registro de lesiones por quemaduras</h3>
+                <div class="cont-contenido">
+                    <div class="caracteristicas">
+                        <form>
+                            <div class="column1">
+                                <div class="datos-paciente" >
+                                    <p class="titulo" style="font-weight: bold;">Caracteristicas del paciente</p>
+                                    <div class="entrada">
+                                            <label for="edad">Edad (Años)</label>
+                                            <input type="text" id="edad" name="edad" placeholder="Años">
+                                    </div>
+                                    <div class="entrada">
+                                            <label for="peso">Peso (Kg)</label>
+                                            <input type="text" id="peso" name="peso" placeholder="Kg">
+                                    </div>
+                                    <div class="entrada">
+                                            <label for="talla">Talla (cm)</label>
+                                            <input type="text" id="talla" name="talla" placeholder="CM">
+                                    </div>
+                                </div>
+                                <div class="agente-etiologico">
+                                    <p class="titulo" style="font-weight: bold;">Agente etiologico de la quemadura</p>
+                                    <div class="entrada">
+                                            <label for="Agente-fisico" >Agentes Fisicos</label>
+                                            <select  id="Agente-fisico" name="AgenteFisico">
+                                                <option>Selecciona...</option>
+                                                <option>amarillo</option>
+                                                <option>verde</option>
+                                                <option>azul</option>
+                                            </select>
+                                    </div>
+                                    <div class="entrada">
+                                            <label for="Agente-quimico">Agentes Quimicos</label>
+                                            <select id="Agente-quimico" name="AgenteQuimico">
+                                                <option>Selecciona...</option>
+                                                <option>amarillo</option>
+                                                <option>verde</option>
+                                                <option>azul</option>
+                                            </select>
+                                    </div>
+                                    <div class="entrada">
+                                            <label for="Agente-biologico">Agentes Biológicos</label>
+                                            <select  id="Agente-biologico" name="AgenteBiologico">
+                                                <option>Selecciona...</option>
+                                                <option>amarillo</option>
+                                                <option>verde</option>
+                                                <option>azul</option>
+                                            </select>
+                                    </div>
+                                </div>
+                                <div class="cont-boton">
+                                    <button id="btn-column1">Siguiente</button>
+                                </div>
+                            </div>
+
+                            <div class="column2">
+                                <div class="cont-tipos">
+                                    <h3 id="title">Caracteristicas de la quemadura</h3>
+                                    <div class="quemaduras">
+                                        <div class="quemadura"  style="background-color: #F5E5FF;">
+                                            <p class="titulo">Primer Grado</p>
+                                            <p class="desc">Epidermis Dañada</p>
+                                            <div class="check">
+                                                <p class="caract">Enrojecimiento, dolor, hinchazón</p>
+                                                <input type="radio" name="grado" id="grado1" value="1">
+                                            </div>
+                                        </div>
+                                        <div class="quemadura" style="background-color: #E9FFE5;">
+                                            <p class="titulo">Segundo Grado</p>
+                                            <p class="desc">Epidermis y parte de la dermis Dañada</p>
+                                            <div class="check">
+                                                <p class="caract">Enrojecimiento, dolor, hinchazón, Ampollas.</p>
+                                                <input type="radio" name="grado" id="grado1" value="2">
+                                            </div>
+                                        </div>
+                                        <div class="quemadura" style="background-color: #FFFFE5;">
+                                            <p class="titulo">Segundo grado profundo</p>
+                                            <p class="desc">Epidermis y dermis completa Dañada.</p>
+                                            <div class="check">
+                                                <p class="caract">Enrojecimiento, dolor, tono punteado rojo  blanquecino.                                                </p>
+                                                <input type="radio" name="grado" id="grado1" value="2">
+                                            </div>
+                                        </div>
+                                        <div class="quemadura" style="background-color: #FDE7EE;">
+                                            <p class="titulo">Tercer Grado</p>
+                                            <p class="desc">Epidermis y dermis gravemente afectadas</p>
+                                            <div class="check">
+                                                <p class="caract">Lesiones no dolorosas y destrucción extensa de la piel.</p>
+                                                <input type="radio" name="grado" id="grado1" value="3">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cont-botones">
+                                        <button class="anterior">Anterior</button>
+                                        <button class="siguiente">Siguiente</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="column3">
+                                <div class="cuerpo">
+                                    <div class="body" >
+                                        <h3>Superficie Corporal quemada</h3>
+                                        <label for="cuerpo" >Partes del cuerpo</label>
+                                        <select  id="cuerpo" name="parteCuerpo">
+                                            <option>Selecciona...</option>
+                                            <option>Rostro</option>
+                                            <option>Cuello</option>
+                                            <option>Pecho</option>
+                                            <option>Brazo Izquierdo</option>
+                                            <option>Brazo Derecho</option>
+                                            <option>Torso y abdomen</option>
+                                            <option>Pierna Izquierda</option>
+                                            <option>Pierna Derecha</option>
+                                        </select>
+                                        <br>
+                                        <label id="indic">@Insert Body here</label>
+                                    </div>
+                                    <img src="../img/bodyFront.png"
+                                    class=" body imagenBody" alt="Body" srcset="../img/bodyFront.png" style="display: none;">
+                                    <div class="cont-botones">
+                                        <button class="anteriorCuerpo">Anterior</button>
+                                        <button class="siguienteCuerpo">Enviar Datos</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="boton-final">
+                                <button id="boton">Enviar Datos</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>  <!--Contenedor contenido-->
+            </div> <!--Fin Registar Sintomas-->
+
+             <!--@TRATAMIENTO DE SINTOMAS-->
+            <div class="tab-pane animate__animated animate__fadeIn animate__faster" data-tab="section2">
+                <div class="cont-nameUser">
+                    <div class="infoUser">
+                        <h2>Hola, <span id="nameUser">Daniel Ramos</span></h2>
+                        <p>Administrador</p>
+                    </div>
+                    <div class="close-session">
+                        <i title="Cerrar Sesion" class="fi fi-ss-sign-out-alt"></i>
+                    </div>
+                </div>
+                <hr>
+                <h2>Tratamientos</h2>
+                <div class="contenedor">
+                    <div class="respuestas">
+                        <div class="respuesta">
+                            <p class="titulo">Daniel Ramos - 27/3/2023, 2:02:02 a. m.</p>
+                            <p class="res">Hello Wrol !!</p>
+                            <p class="res">Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita impedit corrupti sed nam dolorum. Asperiores, mollitia. Labore aspernatur praesentium, cupiditate adipisci, dolores voluptate animi, ratione necessitatibus facilis deserunt repudiandae sint.</p>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+
+             <!--@CONTROL REGISTRO-->
+            <div class="tab-pane animate__animated animate__fadeIn animate__faster" data-tab="section3" id="__seccion3">
+                
+                <div class="cont-editar">
+                    <form id="form-editar" class="form-editar animate__animated animate__fadeInDown animate__faster">
+                        <h2>Editar registro</h2>
+                        <div class="label">
+                            <label for="editName">Nombre</label>
+                            <label for="editNickname">Apeliido</label>
+                        </div>
+                        <div class="control">
+                            <input class="input-edit" id="editName" type="text">
+                            <input class="input-edit" id="editNickname" type="text">
+                        </div>
+                        <div class="label">
+                            <label for="editTipoId">Tipo Identificacion</label>
+                            <label for="editId">Numero Identificacion</label>
+                        </div>
+                        <div class="control">
+                            <input class="input-edit" id="editTipoId" type="text" >
+                            <input class="input-edit" id="editId" type="text" disabled="true">
+                        </div>
+                        <div class="label">
+                            <label for="editEmail">Correo electronico</label>
+                            <label for="editCelular">Celular</label>
+                        </div>
+                        <div class="control">
+                            <input class="input-edit" id="editEmail" type="email" required>
+                            <input class="input-edit" id="editCelular" type="text">
+                        </div>
+                        <div class="label">
+                            <label for="editIsmedic">Rol de usuario</label>
+                            <label for="editCode" disabled>Codigo de acceso Medicos</label>
+                        </div>
+                        <div class="control">
+                            <input class="input-edit" id="editIsmedic" type="text">
+                            <input class="input-edit" id="editCode" type="text">
+                        </div>
+                        <div class="label">
+                            <label for="editSexo">Sexo ?</label>
+                            <label for="editContrasenia">Contraseña de acceso</label>
+                        </div>
+                        <div class="control">
+                            <input class="input-edit" id="editSexo" type="text">
+                            <input class="input-edit" id="editContrasenia" type="text">
+                        </div>
+                        <div class="control">
+                            <button class="del">Cancelar</button>
+                            <button class="act">Actualizar</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="cont-nameUser">
+                    <div class="infoUser">
+                        <h2>Hola, <span id="nameUser">Daniel Ramos</span></h2>
+                        <p>Administrador</p>
+                    </div>
+                    <div class="close-session">
+                        <i title="Cerrar Sesion" class="fi fi-ss-sign-out-alt"></i>
+                    </div>
+                </div>
+                <hr>
+                <h2 id="titulo-registro">Control de Registros</h2>
+                <table clas="animate__animated animate__fadeIn animate__faster" id="tcontenedor">
+                    <thead id="data-head">
+                        <td>__id</td>
+                        <td>Nombre</td>
+                        <td>Apellido</td>
+                        <td>Rol</td>
+                        <td>Acciones</td>
+                    </thead>
+                    <tbody id="data">
+                        <td><input type="hidden" value="value"></td>
+                    </tbody>
+                </table>
+            </div>
+
+             <!--@GENERAR CODIGOS-->
+            <div class="tab-pane animate__animated animate__fadeIn animate__faster" data-tab="section4">
+                <h2>Generar Códigos</h2>
+            </div>
+
+             <!--@RECOMENDACIONES-->
+            <div class="tab-pane animate__animated animate__fadeIn animate__faster" data-tab="section5">
+                <h2>RECOMENDACIONES</h2>
+            </div>
+        </div>
+
+        <!--@MENU DE PAGINA-->
+        <div class="cont-menu">
+            <div id="vista-menu" class="menu">
+                <div class="cont-hamburguesa">
+                    <h1 id="hamburguesa"><i title="Mostrar/ocultar" class="fi fi-rr-menu-burger"></i></h1>
+                </div>
+                <div class="cont-logo">
+                    <i id="img-icon2" class="fi fi-bs-stethoscope"></i>
+                    <h1 class="quemappText"><span class="quem">Q<i id="img-icon" class="fa-solid fa-fire-flame-curved"></i>em</span>App
+                    </h1>
+                    <i id="img-icon-contraido" title="QuemApp-LOgo" class="fa-solid fa-fire-flame-curved"></i>
+                    <span id="titulo-logo-contraido">Quemapp</span>
+                </div>
+                <button title="Registrar" class="seccion tab-button active" data-tab="section1">
+                    <i id="icon-sec" class="fi fi-ss-treatment"></i>
+                    <span class="titulo-seccion seccion1">Registrar sintomas</span>
+                    <span class="title-phone phone1"></span>
+                </button>
+                <button title="Tratamientos" class="seccion tab-button" data-tab="section2">
+                    <i id="icon-sec" class="fi fi-ss-user-md"></i>
+                    <span class="titulo-seccion seccion2">Tratamientos</span>
+                    <span class="title-phone phone2"></span>
+                </button>
+                <button title="Control de registro" id="btn-ctrl-registro" class="seccion tab-button" data-tab="section3">
+                    <i id="icon-sec" class="fi fi-ss-hospital-user"></i>
+                    <span class="titulo-seccion seccion3">Control registro</span>
+                    <span class="title-phone phone3"></span>
+                </button>
+                <button title="Generar Codigos" class="seccion tab-button" data-tab="section4">
+                    <i id="icon-sec" class="fi fi-ss-replace"></i>
+                    <span class="titulo-seccion seccion4">Generar codigos</span>
+                    <span class="title-phone phone4"></span>
+                </button>
+                <button title="Recomendaciones" class="seccion tab-button" data-tab="section5">
+                    <i id="icon-sec" class="fi fi-ss-megaphone"></i>
+                    <span class="titulo-seccion seccion5">Recomendaciones</span>
+                    <span class="title-phone phone5"></span>
+                </button>
+            </div>
+        </div>
+        
+
+      </div><!--end line container-->
+
+        
+        <script src="../js/dash.js" type="module"></script>
+        <script src="../js/control.registro.js"></script>
+        <script src="../js/loader.js"></script>      
+        <script src="../js/dash.registrar.js" ></script>
+        
+  </body>
+</html>

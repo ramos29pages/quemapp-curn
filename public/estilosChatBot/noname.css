@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700&display=swap');
+  
+  :root{
+    --colorh1 : rgb(226, 226, 226);
+    --gradiente: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(20,30,48,1) 0%, rgba(36,59,85,1) 100%);
+    
+    --colorInput: #80868b;
+  
+    --fondo: #f6f6f6;
+      --primary: #243b55;
+    --fuente: roboto, sans-serif;
+    --letraNormal: 0.95rem;
+    --letraPeuqeña: 0.75rem;
+  }
+    
+
+    .tab-content{
+        order: 2;
+        margin: 0%;
+        background-color: var(--fondo);
+    }
+    .cont-menu{
+        margin-top: 0%;
+        background: var(--gradiente);
+        box-shadow: 3px 0px 10px 3px rgba(0, 0, 0, 0.478);
+    }
+    .menu{
+        position: relative;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 60%;
+        gap: 9px;
+        border-radius: 0px;
+        padding: 5px;
+        
+    }
+
+    .menu h1{
+        display: block;
+        font-size: 20px;
+        color: rgb(226, 226, 226);
+        font-weight: 900;
+    }
+
+    .menu .seccion{
+        border: 1px solid #2c4766;
+        width: 85%;
+        font-size: 15px;
+        height: 50px;
+        flex-direction: row;
+        color: gray;
+        transition: all .2s ease-in;
+        font-family: 'Source Sans Pro', sans-serif;
+        font-weight: 400;
+    }
+
+    .menu .seccion:hover{
+        color: whitesmoke;
+        background: rgba(0, 0, 0, 0.163);
+        transform: scale(1.06);
+    }
+
+    .menu .seccion #icon-sec{
+        font-size: 25px;
+        padding-left: 8px;
+      }
+
+    .menu .seccion span{
+        display: block;
+        margin-left: 10px;
+        font-size: 13px;
+    }
+
+    .cont-logo{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        height: 150px;
+        width: 200px;
+        position: relative;
+        margin-bottom: 50px;
+    }
+  
+    .cont-logo #img-icon2{
+        display: block;
+      color: rgba(128, 128, 128, 0.426);
+      filter: blur(2px);
+      padding: 10px;
+      position: absolute;
+      left: 30px;
+      top: 15px;
+      font-size: 95px;
+      transform: rotate(30deg);
+      z-index: 1;
+    }
+
+    .cont-logo .quemappText{
+        font-size: 30px;
+        z-index: 10;
+    }
+
+    .cont-logo .quemappText .quem{
+        color: rgb(166, 187, 250);
+    }
+
+    .cont-logo .quemappText .quem i{
+        color: rgb(226, 226, 226);
+    }
+
+    .cont-hamburguesa{
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        padding: 10px;
+        width: 100%;
+    }
+
+    .cont-hamburguesa h1{
+        color: var(--colorh1);
+        cursor:pointer;
+    }
+
+    .cont-hamburguesa h1:hover{
+        color: white;
+        cursor:pointer;
+        transform: scale(1.25);
+        transition: all .2s ease-in-out;
+    }
+
+    .tab-container{
+        padding: 0%;
+    }
+
+
+    .active2{
+        color: red;
+        background: royalblue;
+    }
+
+    .titulo-seccion{
+        display: block;
+    }
+
+    /*CONTENEDOR DE LOS CONTENIDOS */
+
+    .tab-pane{
+        height: 99.5vh;
+        background: royalblue;
+        margin-left: 5px;
+    }
+
+
+
+

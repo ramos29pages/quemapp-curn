@@ -1,0 +1,32 @@
+:root {
+    --primerColor: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(20,30,48,1) 0%, rgba(36,59,85,1) 100%);
+    
+    --colorInput: #80868b;
+  
+    --fondo: #f6f6f6;
+      --primary: #243b55;
+    --fuente: roboto, sans-serif;
+    --letraNormal: 0.95rem;
+    --letraPeuqeña: 0.75rem;
+  }
+
+.infoPop{
+    margin-bottom: 3px;
+    margin-top: 2px;
+    color: var(--primary);
+    text-align: left;
+    margin-left: 5px;
+    font-size: 14px;
+    background: var(--fondo);
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.imagenBody{
+  height: 345px;
+  border-radius: 20px;
+  background-color: crimson;
+  align-self: center;
+}

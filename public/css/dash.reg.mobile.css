@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;500;700&family=Mochiy+Pop+One&family=Montserrat+Alternates:wght@100;200;400;600;800&display=swap');
+
+:root{
+    --colorh1 : rgb(226, 226, 226);
+    --gradiente: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(20,30,48,1) 0%, rgba(36,59,85,1) 100%);
+    --QUEM: rgb(108, 137, 222);
+    --fondo: rgb(235, 240, 269);
+      --primary: #243b55;
+      --hoverBotones: #121d29;
+    --fuente: roboto, sans-serif;
+    --letraNormal: 0.95rem;
+    --letraPeuqeña: 0.75rem;
+  }  
+
+   /*
+
+    font-family: 'Mochiy Pop One', sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Montserrat Alternates', sans-serif;
+  
+  */
+
+  #titulo-registro{
+    color: var(--QUEM);
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1.35rem;
+    margin-bottom: 5px;
+    border-radius: 15px;
+  }
+
+  #tcontenedor{
+    background-color: #fff;
+    padding: 10px;
+    width: 95%;
+    border-radius: 10px;
+    height: auto;
+    max-height: 50vh;
+    overflow-y: auto;
+  }
+
+  #data-head{
+    height: 40px;
+    border-radius: 10px;
+    background-color: var(--QUEM);
+    padding: 10px;
+    text-align: center;
+    color: white;
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-weight: 400;
+    border-radius: 25px;
+  }
+
+  #data:nth-child(odd){
+    background-color: #121d2924;
+  }
+
+  #data .row td{
+    text-align: center;
+    height: 50px;
+    border-bottom: 2px solid #ddd;
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-weight: 400;
+  }
+
+  #cont-actions{
+    display: flex;
+    justify-content:space-evenly;
+    padding: 5px;
+  }
+
+  #cont-actions .delete {
+    background-color: rgba(220, 20, 60, 0.401);
+    height: 40px;
+    color: white;
+    padding: 10px;
+    text-decoration:none;
+    border-radius: 10px;
+  }
+
+  #cont-actions .edit{
+    background-color: rgba(0, 128, 0, 0.358);
+    height: 40px; 
+    color: white;
+    padding: 10px;
+    text-decoration:none;
+    border-radius: 10px;
+  }
+
+  #cont-actions .edit:hover{
+    background-color: green;
+    transition: all .3s ease;
+  }
+
+  #cont-actions .delete:hover{
+    background-color:  crimson;
+    transition: all .3s ease;
+  }
+
+  .__id{
+    max-width: 50px; /* Ajusta el ancho máximo que deseas permitir */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: rgb(183, 183, 183);
+  }
+
+  .cont-editar{
+   background-color: #00000097;   
+    height: 100%;
+    width: 100%;
+    inset: 0px 0px;
+    z-index: 10;
+    position: absolute;
+    display: grid;
+    align-items: flex-start;
+    justify-content: center;
+    backdrop-filter: blur(3px);
+    font-family: 'Montserrat Alternates', sans-serif;
+    display: none;
+  }
+
+  .cont-editar h2{
+    color: var(--primary)
+  }
+
+  .form-editar{
+    margin-top: 30px;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    background: white;
+    height: auto;
+    filter: blur(0px);
+    box-shadow:0px 10px 20px -15px #121d29;
+
+  }
+
+
+.form-editar .control{
+  margin: 3px;
+}
+
+.form-editar .label{
+  font-size: 10px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  color: var(--QUEM);
+}
+
+
+  .form-editar .control input{
+    background-color: rgb(227, 226, 226);
+    height: 30px;
+    border-radius: 10px;
+    border: none;
+    padding: 5px;
+    color: #243b55;
+    font-family: 'Montserrat Alternates', sans-serif;
+  }
+
+  .form-editar .control .err{
+    border: 1px solid rgb(224, 124, 144);
+    box-shadow: 0px 0px 5px crimson;
+  }
+
+  .form-editar .control input:focus {
+    outline: 2px solid var(--primary); /* Cambia el color del borde al estar seleccionado */
+  }
+
+  .form-editar .control .act{
+    margin-top: 10px;
+    background-color: var(--primary);
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    width: 100px;
+    color: white;
+  } 
+  .form-editar .control .act:hover{
+    margin-top: 10px;
+    cursor: pointer;
+    background-color: var(--hoverBotones);
+    transition: all .3s ease;
+    font-size: 15px;
+  }
+
+  .form-editar .control .del{
+    margin-top: 10px;
+    background-color: gray;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    width: 100px;
+    color: white;
+  }
+
+  .form-editar .control .del:hover{
+    margin-top: 10px;
+    cursor: pointer;
+    background-color: var(--hoverBotones);
+    transition: all .3s ease;
+    font-size: 15px;
+  }
+
+  .info{
+    background-color: rgb(219, 219, 219);
+    font-size: 12px;
+    color: #121d29a8;
+    padding: 5px;
+    margin: 6px;
+    border-radius: 8px;
+    font-family: 'Montserrat Alternates', sans-serif;
+  }
+
+  .infoPop{
+    margin-bottom: 3px;
+    margin-top: 2px;
+    color: var(--primary);
+    text-align: left;
+    margin-left: 5px;
+    font-size: 13px;
+    background: var(--fondo);
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    font-family: 'Montserrat Alternates', sans-serif;
+  }
+
+  .swal2-popup {
+    max-width: 300px; /* Ancho personalizado */
+  }
+
+  .swal2-actions{
+    font-family: "Montserrat Alternates", sans-serif;
+  }
+
+  .infoDelete{
+    font-family: "Montserrat Alternates", sans-serif;
+    font-size: 12px;
+  }
+  
+
+ 

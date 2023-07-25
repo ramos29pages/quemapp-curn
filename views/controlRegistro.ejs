@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Control de Registro</title>
+  </head>
+  <body>
+    <h1>Usuarios Registrados</h1>
+    <code>if (users.length === 0) {</code>
+      <p>No hay usuarios registrados en la base de datos.</p>
+    <code>}</code>
+    <code>else {</code>
+      <ul>
+        <code>users.forEach(user => {</code>
+          <li><%= user.name %> - <%= user.rol %></li>
+        <code>});</code>
+      </ul>
+    <code>}</code>
+  </body>
+</html>

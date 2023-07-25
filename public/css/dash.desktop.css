@@ -1,0 +1,860 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;500;700&family=Mochiy+Pop+One&family=Montserrat+Alternates:wght@100;200;400;600;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700&display=swap");
+header {
+  font-size: 1.5rem;
+}
+
+.tab-container .tab-content {
+  background: rgb(235, 240, 255);
+}
+.tab-container .tab-content .tab-pane {
+  display: none;
+}
+.tab-container .tab-content .tab-pane h3 {
+  color: rgb(108, 137, 222);
+  font-weight: 600;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 20px;
+}
+.tab-container .tab-content .tab-pane .cont-nameUser {
+  padding: 1px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.tab-container .tab-content .tab-pane .cont-nameUser .infoUser {
+  background: transparent;
+}
+.tab-container .tab-content .tab-pane .cont-nameUser .infoUser h2 {
+  color: rgb(108, 137, 222);
+  font-weight: 600;
+  font-family: "Source Sans Pro", sans-serif;
+}
+.tab-container .tab-content .tab-pane .cont-nameUser .infoUser #nameUser {
+  color: #292929;
+}
+.tab-container .tab-content .tab-pane .cont-nameUser .infoUser p {
+  color: rgb(108, 137, 222);
+  font-weight: 400;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 15px;
+}
+.tab-container .tab-content .tab-pane .cont-nameUser .close-session {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  transition: all 0.2s ease-in;
+}
+.tab-container .tab-content .tab-pane .cont-nameUser .close-session i:hover {
+  transform: scale(1.115);
+  transition: all 0.2s ease-in;
+  cursor: pointer;
+}
+.tab-container .tab-content .tab-pane hr {
+  color: rgb(212, 212, 212);
+  outline: none;
+  margin: 8px;
+}
+.tab-container .tab-content .tab-pane .cont-contenido {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  justify-content: center;
+}
+.tab-container .tab-content .tab-pane .cont-contenido .caracteristicas form {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 5px;
+  min-height: 90vh;
+  max-height: 90vh;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+  /*
+  @media screen and (min-width: 700px) {
+      background: greenyellow;
+      grid-template-columns: repeat(3, 1fr);
+      min-height: 100vh;
+      grid-gap: 8px;
+      font-size: 18px;
+
+      .column1{
+          .cont-boton{
+              display: none;
+          }
+      }
+      .column1,
+      .column2,
+      .column3 {
+          width: 100%;
+      }
+  }
+  */
+}
+.tab-container .tab-content .tab-pane .cont-contenido .caracteristicas form .column1,
+.tab-container .tab-content .tab-pane .cont-contenido .caracteristicas form .column2,
+.tab-container .tab-content .tab-pane .cont-contenido .caracteristicas form .column3 {
+  width: 100%;
+}
+@media screen and (min-width: 640px) and (max-width: 859px) {
+  .tab-container .tab-content .tab-pane .cont-contenido .caracteristicas form {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 350px 1fr 80px;
+  }
+  .tab-container .tab-content .tab-pane .cont-contenido .caracteristicas form .column1,
+  .tab-container .tab-content .tab-pane .cont-contenido .caracteristicas form .column3 {
+    width: 100%;
+  }
+  .tab-container .tab-content .tab-pane .cont-contenido .caracteristicas form .column1 {
+    order: 1;
+    width: 100%;
+  }
+  .tab-container .tab-content .tab-pane .cont-contenido .caracteristicas form .column1 .datos-paciente {
+    background: white;
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 30px repeat(3, 1fr);
+    width: 100%;
+    border-radius: 15px;
+    padding: 5px;
+    /*box-shadow: 0px 0px 8px 1px rgba(104, 104, 104, 0.284);*/
+    color: gray;
+  }
+  .tab-container .tab-content .tab-pane .cont-contenido .caracteristicas form .column1 .datos-paciente .titulo {
+    font-weight: bold;
+    text-align: center;
+    font-size: 14px;
+  }
+  .tab-container .tab-content .tab-pane .cont-contenido .caracteristicas form .column1 .datos-paciente .entrada {
+    margin: 1px;
+    height: 35px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .tab-container .tab-content .tab-pane .cont-contenido .caracteristicas form .column1 .datos-paciente .entrada label {
+    max-width: 150px;
+    width: 100px;
+    text-align: center;
+    font-size: 13px;
+  }
+  .tab-container .tab-content .tab-pane .cont-contenido .caracteristicas form .column1 .datos-paciente .entrada input {
+    background-color: rgb(224, 224, 224);
+    outline: none;
+    border: none;
+    height: 95%;
+    padding: 5px;
+    border-radius: 7px;
+    text-align: center;
+  }
+  .tab-container .tab-content .tab-pane .cont-contenido .caracteristicas form .column1 .datos-paciente .entrada input::placeholder {
+    color: rgb(157, 155, 155);
+  }
+  .tab-container .tab-content .tab-pane .cont-contenido .caracteristicas form .column1 .agente-etiologico {
+    margin-top: 8px;
+    background: white;
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 30px repeat(3, 1fr);
+    width: 100%;
+    border-radius: 15px;
+    padding: 5px;
+    color: gray;
+    text-align: center;
+  }
+  .tab-container .tab-content .tab-pane .cont-contenido .caracteristicas form .column1 .agente-etiologico .titulo {
+    font-weight: bold;
+    font-size: 14px;
+  }
+  .tab-container .tab-content .tab-pane .cont-contenido .caracteristicas form .column1 .agente-etiologico .entrada {
+    margin: 1px;
+    height: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .tab-container .tab-content .tab-pane .cont-contenido .caracteristicas form .column1 .agente-etiologico .entrada label {
+    max-width: 150px;
+    width: 120px;
+    text-align: center;
+  }
+  .tab-container .tab-content .tab-pane .cont-contenido .caracteristicas form .column1 .agente-etiologico select {
+    background-color: rgb(224, 224, 224);
+    outline: none;
+    border: none;
+    height: 95%;
+    width: 130px;
+    padding: 5px;
+    border-radius: 7px;
+    text-align: center;
+    color: gray;
+  }
+  .tab-container .tab-content .tab-pane .cont-contenido .caracteristicas form .column1 .agente-etiologico select::hover {
+    cursor: pointer;
+  }
+  .tab-container .tab-content .tab-pane .cont-contenido .caracteristicas form .column1 .cont-boton {
+    display: none;
+  }
+  .tab-container .tab-content .tab-pane .cont-contenido .caracteristicas form .column2 {
+    grid-column: 1/span 2;
+    min-width: 300px;
+    order: 3;
+    width: 100%;
+    display: grid;
+  }
+  .tab-container .tab-content .tab-pane .cont-contenido .caracteristicas form .column2 .cont-tipos .quemaduras {
+    background-color: white;
+    border-radius: 15px;
+    padding: 5px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+  .tab-container .tab-content .tab-pane .cont-contenido .caracteristicas form .column2 .cont-tipos .quemaduras .quemadura {
+    padding: 5px;
+    border-radius: 15px;
+    margin: 2px;
+  }
+  .tab-container .tab-content .tab-pane .cont-contenido .caracteristicas form .column2 .cont-tipos .quemaduras .quemadura .titulo {
+    text-align: center;
+    font-weight: 400;
+    color: black;
+  }
+  .tab-container .tab-content .tab-pane .cont-contenido .caracteristicas form .column2 .cont-tipos .quemaduras .quemadura .desc {
+    text-align: center;
+    font-size: 13px;
+    color: var(--QUEM);
+    font-weight: 600;
+  }
+  .tab-container .tab-content .tab-pane .cont-contenido .caracteristicas form .column2 .cont-tipos .quemaduras .quemadura .check {
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    font-size: 17px;
+    height: 40px;
+    max-height: 40px;
+    padding: 0px;
+    color: gray;
+    font-weight: 600;
+  }
+  .tab-container .tab-content .tab-pane .cont-contenido .caracteristicas form .column2 .cont-tipos .quemaduras .quemadura .check p {
+    width: 80%;
+    height: 38px;
+    font-size: 12px;
+    padding: 2px;
+  }
+  .tab-container .tab-content .tab-pane .cont-contenido .caracteristicas form .column2 .cont-tipos .quemaduras .quemadura .check #grado1 {
+    width: 25px;
+    height: 25px;
+    border: none;
+    outline: none;
+    background: rgb(0, 26, 255);
+  }
+  .tab-container .tab-content .tab-pane .cont-contenido .caracteristicas form .column2 .cont-tipos .cont-botones {
+    display: none;
+  }
+  .tab-container .tab-content .tab-pane .cont-contenido .caracteristicas form .column3 {
+    order: 2;
+    width: 100%;
+    display: grid;
+  }
+  .tab-container .tab-content .tab-pane .cont-contenido .caracteristicas form .column3 .cuerpo {
+    display: grid;
+    height: 100%;
+  }
+  .tab-container .tab-content .tab-pane .cont-contenido .caracteristicas form .column3 .cuerpo .body {
+    width: 100%;
+    background-color: white;
+    padding: 10px;
+    border-radius: 20px;
+  }
+  .tab-container .tab-content .tab-pane .cont-contenido .caracteristicas form .column3 .cuerpo .body h3 {
+    color: rgb(108, 137, 222);
+    margin: 5px;
+    font-size: 14px;
+  }
+  .tab-container .tab-content .tab-pane .cont-contenido .caracteristicas form .column3 .cuerpo .cont-botones {
+    display: none;
+  }
+  .tab-container .tab-content .tab-pane .cont-contenido .caracteristicas form .column3 .cuerpo #indic {
+    background-color: rgba(207, 169, 169, 0.83);
+    text-align: center;
+    color: red;
+    font-weight: 400;
+    padding: 3px;
+  }
+  .tab-container .tab-content .tab-pane .cont-contenido .caracteristicas form .column3 .cuerpo label {
+    text-align: center;
+  }
+  .tab-container .tab-content .tab-pane .cont-contenido .caracteristicas form .column3 .cuerpo select {
+    height: 40px;
+    padding: 8px;
+    color: gray;
+  }
+  .tab-container .tab-content .tab-pane .cont-contenido .caracteristicas form .boton-final {
+    grid-column: 1/span 2;
+    display: block;
+    order: 4;
+    width: 100%;
+    min-height: 70px;
+    bottom: 10px;
+    height: 100%;
+    grid-column: 1/4;
+    display: flex;
+    justify-content: end;
+    align-items: flex-start;
+    transition: all 0.3s ease-in;
+  }
+  .tab-container .tab-content .tab-pane .cont-contenido .caracteristicas form .boton-final #boton {
+    background-color: #243b55;
+    color: rgb(183, 183, 183);
+    border: none;
+    border-radius: 15px;
+    height: 40px;
+    margin-right: 30px;
+    width: 180px;
+    transition: all 0.3s ease-in;
+  }
+  .tab-container .tab-content .tab-pane .cont-contenido .caracteristicas form .boton-final #boton:hover {
+    transition: all 0.3s ease-out;
+    transform: scale(1.1);
+    cursor: pointer;
+    color: white;
+    background-color: #121d29;
+  }
+}
+.tab-container .tab-content .active {
+  display: block;
+}
+
+@media screen and (min-width: 860px) {
+  .tab-container .tab-content .tab-pane .cont-contenido .caracteristicas form {
+    max-height: 70vh;
+    grid-template-rows: 1fr 90px;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 8px;
+    font-size: 18px;
+  }
+  .tab-container .tab-content .tab-pane .cont-contenido .caracteristicas form .column1 {
+    width: 100%;
+  }
+  .tab-container .tab-content .tab-pane .cont-contenido .caracteristicas form .column1 .datos-paciente {
+    background: white;
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 30px repeat(3, 1fr);
+    padding: 5px;
+    width: 100%;
+    border-radius: 20px;
+    padding: 10px;
+    color: gray;
+  }
+  .tab-container .tab-content .tab-pane .cont-contenido .caracteristicas form .column1 .datos-paciente .titulo {
+    font-size: 15px;
+    text-align: center;
+  }
+  .tab-container .tab-content .tab-pane .cont-contenido .caracteristicas form .column1 .datos-paciente .entrada {
+    margin: 3px;
+    height: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .tab-container .tab-content .tab-pane .cont-contenido .caracteristicas form .column1 .datos-paciente .entrada input {
+    background-color: rgb(224, 224, 224);
+    outline: none;
+    border: none;
+    height: 95%;
+    padding: 5px;
+    border-radius: 7px;
+    text-align: center;
+  }
+  .tab-container .tab-content .tab-pane .cont-contenido .caracteristicas form .column1 .datos-paciente .entrada input::placeholder {
+    color: rgb(157, 155, 155);
+  }
+  .tab-container .tab-content .tab-pane .cont-contenido .caracteristicas form .column1 .agente-etiologico {
+    background: white;
+    height: auto;
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 30px repeat(3, 1fr);
+    padding: 5px;
+    width: 100%;
+    border-radius: 20px;
+    padding: 10px;
+    color: gray;
+    font-size: 17px;
+    word-wrap: none;
+  }
+  .tab-container .tab-content .tab-pane .cont-contenido .caracteristicas form .column1 .agente-etiologico .titulo {
+    font-size: 15px;
+    text-align: center;
+  }
+  .tab-container .tab-content .tab-pane .cont-contenido .caracteristicas form .column1 .agente-etiologico .entrada {
+    margin: 3px;
+    height: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 13px;
+    transition: all 0.2s ease-out;
+  }
+}
+@media screen and (min-width: 860px) and (min-width: 1050px) {
+  .tab-container .tab-content .tab-pane .cont-contenido .caracteristicas form .column1 .agente-etiologico .entrada {
+    font-size: 17px;
+    transition: all 0.2s ease-out;
+  }
+}
+@media screen and (min-width: 860px) {
+  .tab-container .tab-content .tab-pane .cont-contenido .caracteristicas form .column1 .agente-etiologico .entrada select {
+    background-color: rgb(224, 224, 224);
+    outline: none;
+    border: none;
+    height: 95%;
+    width: 150px;
+    padding: 5px;
+    border-radius: 7px;
+    text-align: center;
+    color: gray;
+  }
+  .tab-container .tab-content .tab-pane .cont-contenido .caracteristicas form .column1 .agente-etiologico .entrada select:hover {
+    cursor: pointer;
+  }
+}
+@media screen and (min-width: 860px) {
+  .tab-container .tab-content .tab-pane .cont-contenido .caracteristicas form .column1 .cont-boton {
+    display: none;
+  }
+}
+@media screen and (min-width: 860px) {
+  .tab-container .tab-content .tab-pane .cont-contenido .caracteristicas form .column2 {
+    display: none;
+    width: 100%;
+  }
+  .tab-container .tab-content .tab-pane .cont-contenido .caracteristicas form .column2 .cont-tipos {
+    height: 100%;
+    width: 100%;
+  }
+  .tab-container .tab-content .tab-pane .cont-contenido .caracteristicas form .column2 .cont-tipos h3 {
+    background-color: white;
+    font-size: medium;
+    text-align: center;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    padding: 5px;
+  }
+  .tab-container .tab-content .tab-pane .cont-contenido .caracteristicas form .column2 .cont-tipos .quemaduras {
+    background: white;
+    padding: 5px;
+    border-radius: 20px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    margin-bottom: 10px;
+    height: calc(100% - 25px);
+    align-items: center;
+  }
+  .tab-container .tab-content .tab-pane .cont-contenido .caracteristicas form .column2 .cont-tipos .quemaduras #title {
+    color: red;
+  }
+  .tab-container .tab-content .tab-pane .cont-contenido .caracteristicas form .column2 .cont-tipos .quemaduras .quemadura {
+    padding: 5px;
+    border-radius: 15px;
+    margin: 5px;
+  }
+  .tab-container .tab-content .tab-pane .cont-contenido .caracteristicas form .column2 .cont-tipos .quemaduras .quemadura .titulo {
+    text-align: center;
+    font-weight: 400;
+    color: black;
+  }
+  .tab-container .tab-content .tab-pane .cont-contenido .caracteristicas form .column2 .cont-tipos .quemaduras .quemadura .desc {
+    text-align: center;
+    font-size: 13px;
+    color: var(--QUEM);
+    font-weight: 600;
+    transition: all 0.2s ease-out;
+  }
+}
+@media screen and (min-width: 860px) and (min-width: 1000px) {
+  .tab-container .tab-content .tab-pane .cont-contenido .caracteristicas form .column2 .cont-tipos .quemaduras .quemadura .desc {
+    font-size: 15px;
+    transition: all 0.2s ease-out;
+  }
+}
+@media screen and (min-width: 860px) {
+  .tab-container .tab-content .tab-pane .cont-contenido .caracteristicas form .column2 .cont-tipos .quemaduras .quemadura .check {
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    font-size: 14px;
+    padding: 5px;
+    color: gray;
+    font-weight: 600;
+  }
+  .tab-container .tab-content .tab-pane .cont-contenido .caracteristicas form .column2 .cont-tipos .quemaduras .quemadura .check p {
+    width: 80%;
+    height: 38px;
+    font-size: 11px;
+    padding: 2px;
+    transition: all 0.2s ease-in;
+  }
+}
+@media screen and (min-width: 860px) and (min-width: 1000px) {
+  .tab-container .tab-content .tab-pane .cont-contenido .caracteristicas form .column2 .cont-tipos .quemaduras .quemadura .check p {
+    font-size: 13px;
+    transition: all 0.2s ease-out;
+  }
+}
+@media screen and (min-width: 860px) {
+  .tab-container .tab-content .tab-pane .cont-contenido .caracteristicas form .column2 .cont-tipos .quemaduras .quemadura .check #grado1 {
+    width: 25px;
+    height: 25px;
+    border: none;
+    outline: none;
+    background: red;
+    cursor: pointer;
+  }
+  .tab-container .tab-content .tab-pane .cont-contenido .caracteristicas form .column2 .cont-tipos .quemaduras .quemadura .check #grado1:checked {
+    background-color: #172636;
+  }
+}
+@media screen and (min-width: 860px) {
+  .tab-container .tab-content .tab-pane .cont-contenido .caracteristicas form .column2 .cont-botones {
+    display: none;
+  }
+}
+@media screen and (min-width: 860px) {
+  .tab-container .tab-content .tab-pane .cont-contenido .caracteristicas form .column3 {
+    background-color: rgba(221, 221, 221, 0.3568627451);
+    padding: 0px;
+    display: none;
+    width: 100%;
+  }
+  .tab-container .tab-content .tab-pane .cont-contenido .caracteristicas form .column3 .cuerpo {
+    height: auto;
+    width: 100%;
+    display: grid;
+    justify-content: center;
+    position: relative;
+    padding: 0px;
+  }
+  .tab-container .tab-content .tab-pane .cont-contenido .caracteristicas form .column3 .cuerpo select {
+    height: 40px;
+    padding: 8px;
+    color: gray;
+  }
+  .tab-container .tab-content .tab-pane .cont-contenido .caracteristicas form .column3 .cuerpo label {
+    margin: 8px;
+    text-align: center;
+  }
+  .tab-container .tab-content .tab-pane .cont-contenido .caracteristicas form .column3 .cuerpo #indic {
+    background-color: rgba(207, 169, 169, 0.83);
+    text-align: center;
+    color: red;
+    font-weight: 400;
+    padding: 5px;
+  }
+  .tab-container .tab-content .tab-pane .cont-contenido .caracteristicas form .column3 .cuerpo .body {
+    margin: 0px;
+    background-color: white;
+    max-height: 100%;
+    padding: 5px;
+    border-radius: 20px;
+  }
+  .tab-container .tab-content .tab-pane .cont-contenido .caracteristicas form .column3 .cuerpo .body h3 {
+    color: rgb(108, 137, 222);
+    margin: 0px;
+    font-size: 17px;
+    text-align: center;
+  }
+  .tab-container .tab-content .tab-pane .cont-contenido .caracteristicas form .column3 .cont-botones {
+    display: none;
+  }
+}
+@media screen and (min-width: 860px) {
+  .tab-container .tab-content .tab-pane .cont-contenido .caracteristicas form .boton-final {
+    bottom: 10px;
+    height: 100%;
+    grid-column: 1/4;
+    display: flex;
+    justify-content: end;
+    align-items: flex-start;
+    transition: all 0.3s ease-in;
+  }
+  .tab-container .tab-content .tab-pane .cont-contenido .caracteristicas form .boton-final #boton {
+    background-color: #243b55;
+    color: rgb(183, 183, 183);
+    border: none;
+    border-radius: 15px;
+    height: 40px;
+    margin-right: 30px;
+    width: 180px;
+    transition: all 0.3s ease-in;
+  }
+  .tab-container .tab-content .tab-pane .cont-contenido .caracteristicas form .boton-final #boton:hover {
+    transition: all 0.3s ease-out;
+    transform: scale(1.1);
+    cursor: pointer;
+    color: white;
+    background-color: #121d29;
+  }
+}
+
+.tab-container .cont-menu {
+  background: linear-gradient(90deg, rgb(2, 0, 36) 0%, rgb(20, 30, 48) 0%, rgb(36, 59, 85) 100%);
+  box-shadow: 3px 0px 10px 3px rgba(0, 0, 0, 0.478);
+  order: 1;
+}
+.tab-container .cont-menu .menu {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 60%;
+  gap: 9px;
+  border-radius: 0px;
+  padding: 5px;
+}
+.tab-container .cont-menu .menu .cont-hamburguesa {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  padding: 10px;
+  width: 100%;
+}
+.tab-container .cont-menu .menu .cont-hamburguesa h1 {
+  display: block;
+  font-size: 20px;
+  color: rgb(226, 226, 226);
+  font-weight: 300;
+  transition: all 0.2s ease-in-out;
+  font-family: "arial", sans-serif;
+}
+.tab-container .cont-menu .menu .cont-hamburguesa h1:hover {
+  color: white;
+  cursor: pointer;
+  transform: scale(1.25);
+  transition: all 0.2s ease-in-out;
+}
+.tab-container .cont-menu .menu .cont-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  height: 150px;
+  width: 200px;
+  position: relative;
+}
+.tab-container .cont-menu .menu .cont-logo #img-icon2 {
+  display: block;
+  color: rgba(128, 128, 128, 0.426);
+  filter: blur(2px);
+  padding: 10px;
+  position: absolute;
+  left: 30px;
+  top: 15px;
+  font-size: 95px;
+  transform: rotate(30deg);
+  z-index: 1;
+}
+.tab-container .cont-menu .menu .cont-logo .quemappText {
+  font-size: 25px;
+  z-index: 10;
+  font-family: "Mochiy Pop One", sans-serif;
+  color: rgb(226, 226, 226);
+}
+.tab-container .cont-menu .menu .cont-logo .quemappText .quem {
+  color: rgb(166, 187, 250);
+}
+.tab-container .cont-menu .menu .cont-logo .quemappText .quem i {
+  color: rgb(226, 226, 226);
+}
+.tab-container .cont-menu .menu .seccion {
+  border: 1px solid #2c4766;
+  width: 85%;
+  font-size: 15px;
+  height: 40px;
+  flex-direction: row;
+  color: gray;
+  transition: all 0.2s ease-in;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 400;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  font-family: "Montserrat Alternates", sans-serif;
+}
+.tab-container .cont-menu .menu .seccion:hover {
+  color: whitesmoke;
+  background: rgba(0, 0, 0, 0.163);
+  transform: scale(1.06);
+}
+.tab-container .cont-menu .menu .seccion #icon-sec {
+  font-size: 25px;
+  padding-left: 8px;
+}
+.tab-container .cont-menu .menu .seccion span {
+  display: block;
+  margin-left: 8px;
+  font-size: 0.625rem;
+  word-wrap: normal;
+  text-align: left;
+}
+
+.tab-container .cont-menu {
+  background: linear-gradient(90deg, rgb(2, 0, 36) 0%, rgb(20, 30, 48) 0%, rgb(36, 59, 85) 100%);
+}
+.tab-container .cont-menu .contraido {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 60%;
+  gap: 9px;
+  border-radius: 0px;
+  padding: 5px;
+}
+.tab-container .cont-menu .contraido .cont-hamburguesa {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  width: 100%;
+}
+.tab-container .cont-menu .contraido .cont-hamburguesa h1 {
+  display: block;
+  font-size: 20px;
+  color: rgb(226, 226, 226);
+  font-weight: 300;
+  transition: all 0.2s ease-in-out;
+  font-family: "arial", sans-serif;
+}
+.tab-container .cont-menu .contraido .cont-hamburguesa h1:hover {
+  color: white;
+  cursor: pointer;
+  transform: scale(1.25);
+  transition: all 0.2s ease-in-out;
+}
+.tab-container .cont-menu .contraido .cont-logo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 10px;
+  height: 50px;
+  width: 100%;
+  margin-bottom: 100px;
+  position: relative;
+}
+.tab-container .cont-menu .contraido .cont-logo #img-icon2 {
+  display: none;
+}
+.tab-container .cont-menu .contraido .cont-logo #img-icon-contraido {
+  font-size: 35px;
+  padding: 7px;
+  filter: drop-shadow(0px 3px 5px rgba(231, 231, 231, 0.201));
+  color: rgb(108, 137, 222);
+  margin-bottom: 2px;
+}
+.tab-container .cont-menu .contraido .cont-logo span {
+  display: block;
+  top: 2px;
+  color: rgb(148, 148, 148);
+  font-size: 8px;
+  font-family: "Montserrat Alternates", sans-serif;
+}
+.tab-container .cont-menu .contraido .cont-logo .quemappText {
+  display: none;
+  font-size: 25px;
+  z-index: 10;
+  font-family: "Mochiy Pop One", sans-serif;
+}
+.tab-container .cont-menu .contraido .cont-logo .quemappText .quem {
+  color: rgb(166, 187, 250);
+}
+.tab-container .cont-menu .contraido .cont-logo .quemappText .quem i {
+  color: rgb(226, 226, 226);
+}
+.tab-container .cont-menu .contraido .seccion {
+  border: 1px solid #2c4766;
+  width: 85%;
+  font-size: 15px;
+  height: 40px;
+  flex-direction: row;
+  color: gray;
+  transition: all 0.2s ease-in;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 400;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  font-family: "Montserrat Alternates", sans-serif;
+}
+.tab-container .cont-menu .contraido .seccion:hover {
+  color: whitesmoke;
+  background: rgba(0, 0, 0, 0.163);
+  transform: scale(1.06);
+}
+.tab-container .cont-menu .contraido .seccion #icon-sec {
+  font-size: 23px;
+  padding-left: 8px;
+}
+.tab-container .cont-menu .contraido .seccion span {
+  display: none;
+  margin-left: 8px;
+  font-size: 0.625rem;
+  word-wrap: normal;
+  text-align: left;
+}
+
+/*
+
+    font-family: 'Mochiy Pop One', sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Montserrat Alternates', sans-serif;
+
+  */
+* {
+  box-sizing: border-box;
+  margin: 0%;
+  padding: 0%;
+}
+
+.tab-container {
+  width: 100%;
+  height: 100vh;
+  background-color: #f2f2f2;
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  grid-template-rows: 1fr;
+  overflow: hidden;
+  transition: all 1s ease-in;
+}
+@media screen and (min-width: 500px) {
+  .tab-container {
+    grid-template-columns: 60px 1fr;
+    transition: width 0.3s ease-in;
+  }
+}
+.tab-container .tab-content {
+  padding-left: 10px;
+  order: 2;
+}
+
+
+/*# sourceMappingURL=dash.desktop.css.map */

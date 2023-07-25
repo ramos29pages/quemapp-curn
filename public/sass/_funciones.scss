@@ -1,0 +1,14 @@
+// Definimos la variable que contiene el valor base en rem
+$base-font-size: 16px;
+
+// Creamos la función para convertir de px a rem
+@function to-rem($pixels) {
+  // Convertimos el valor recibido en píxeles a rem dividiéndolo por el valor base
+  @return ($pixels / $base-font-size) * 1rem;
+}
+
+// Ejemplo de uso de la función
+header {
+  font-size: to-rem(24px);
+  // La propiedad font-size será igual a 1.5rem
+}

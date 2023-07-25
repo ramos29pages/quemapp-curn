@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registrar Datos</title>
+    <script src="../../node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
+    
+    <link rel="stylesheet" href="../css/registrar.css" />
+    <script
+      src="https://kit.fontawesome.com/45abf6fd04.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="cont-formulario">
+
+      <form action="" class="formulario">
+
+
+        <div class="cont-icono">
+          <i id="icono" class="fa-solid fa-user-plus"></i>
+        </div>
+        <h3 class="form_titulo">Área de Registro</h3>
+        <div class="show-first">
+          
+          <div class="row">
+            <div class="form_div">
+              <input type="text" class="form_input" id="name" name="name" placeholder=" " value="" />
+              <label for="name" class="form_label">Primer nombre</label>
+            </div>
+            <div class="form_div">
+              <input type="text" id="nickname" name="nickname" class="form_input" placeholder=" " />
+              <label for="nickname" class="form_label">Primer apeliido</label>
+            </div>
+          </div>
+          
+          <div class="row">
+            <div class="form_div">
+              <select type="text" class="form_input seleccion" name="type" id="type" placeholder=" " value="">
+                <option value="1">Cedula de ciudadania</option>
+                <option value="2">Cedula de extrageria</option>
+                <option value="3">Tarjeta de identidad</option>
+              </select>
+              <label for="type" class="form_label">Tipo Identificación</label>
+            </div>
+            <div class="form_div">
+              <input type="text" id="id" name="id" class="form_input" placeholder=" " />
+              <label for="id" class="form_label">Número de identificacion</label>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="form_div">
+              <input type="email" class="form_input" name="email" id="email" placeholder=" " value="" />
+              <label for="email" class="form_label">Correo Electrónico</label>
+            </div>
+            <div class="form_div">
+              <input type="text" id="phone" name="phone" class="form_input" placeholder=" " />
+              <label for="phone" class="form_label">Celular</label>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="show-second">
+
+          <div class="row">
+            <div class="form_div">
+              <select class="form_input seleccion" name="isMedic" id="isMedic" placeholder=" " value="">
+                <option value="0">Registrarme como usuario</option>
+                <option value="1">Registrarme como medico</option>
+              </select>
+              <label for="code" class="form_label">Rol de registro</label>
+            </div>
+            <div class="form_div">
+              <input type="text" id="code" name="code" class="form_input" placeholder="" />
+              <label for="code" class="form_label">Codigo Verificación</label>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="form_div">
+              <select type="text" class="form_input seleccion" name="sexo" id="sexo" placeholder=" " value="">
+                <option value="1">Masculino</option>
+                <option value="2">Femenino</option>
+              </select>
+              <label for="sexo" class="form_label">Sexo</label>
+            </div>
+            <div class="form_div">
+              <input type="text" name="pass" id="pass" class="form_input" placeholder=" " />
+              <label for="pass" class="form_label">Crea una contraseña</label>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="cont-button">
+          <input type="button" class="form_boton boton-back" value="Regresar">
+          <input type="button" name="nexty" class="form_boton boton-next" value="Siguiente" />
+          <input type="button" class="form_boton boton-registro" value="Registrarme" />
+        </div>
+
+        <p>¿ Olvidaste tu codigo ?</p>
+        <p>Puedes <a href="#">Solicitar un código</a> de Verificación</p>
+
+        <h1 class="quemappText">Q<i id="img-icon" class="fa-solid fa-fire-flame-curved"></i>emApp</h1>
+      </form>
+    </div>
+    <script src="../js/registrar.js" type="text/javascript"></script>
+    
+  </body>
+</html>

@@ -1,0 +1,113 @@
+@use './variables';
+@use './funciones';
+
+
+.tab-container{
+    .cont-menu{
+        background: variables.$gradiente;
+        box-shadow: 3px 0px 10px 3px rgba(0, 0, 0, 0.478);
+        order: 1;
+        .menu{
+            position: relative;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 60%;
+            gap: 9px;
+            border-radius: 0px;
+            padding: 5px;
+            
+            .cont-hamburguesa{
+                display: flex;
+                justify-content: end;
+                align-items: center;
+                padding: 10px;
+                width: 100%;
+                h1{
+                    display: block;
+                    font-size: 20px;
+                    color: rgb(226, 226, 226);
+                    font-weight: 300;
+                    transition: all .2s ease-in-out;
+                    font-family: 'arial', sans-serif;
+                    &:hover{
+                        color: white;
+                        cursor:pointer;
+                        transform: scale(1.25);
+                        transition: all .2s ease-in-out;
+                    }
+                }
+
+            }
+
+            .cont-logo{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 10px;
+                height: 150px;
+                width: 200px;
+                position: relative;
+                #img-icon2{
+                    display: block;
+                  color: rgba(128, 128, 128, 0.426);
+                  filter: blur(2px);
+                  padding: 10px;
+                  position: absolute;
+                  left: 30px;
+                  top: 15px;
+                  font-size: 95px;
+                  transform: rotate(30deg);
+                  z-index: 1;
+                }
+                .quemappText{
+                    font-size: 25px;
+                    z-index: 10;
+                    font-family: 'Mochiy Pop One', sans-serif;
+                    color: rgb(226, 226, 226);
+                    .quem{
+                        color: rgb(166, 187, 250);
+                        i{
+                            color: rgb(226, 226, 226);
+                        }
+                    }
+                }
+            }
+
+            .seccion{
+                border: 1px solid #2c4766;
+                width: 85%;
+                font-size: 15px;
+                height: 40px;
+                flex-direction: row;
+                color: gray;
+                transition: all .2s ease-in;
+                font-family: 'Source Sans Pro', sans-serif;
+                font-weight: 400;
+                background: transparent;
+                display: flex;
+                align-items: center;
+                border-radius: 10px;
+                font-family: 'Montserrat Alternates', sans-serif;
+                &:hover{
+                    color: whitesmoke;
+                    background: rgba(0, 0, 0, 0.163);
+                    transform: scale(1.06);
+                }
+                #icon-sec{
+                    font-size: 25px;
+                    padding-left: 8px;
+                }
+                span{
+                    display: block;
+                    margin-left: 8px;
+                    font-size: funciones.to-rem(10px);
+                    word-wrap: normal;
+                    text-align: left;
+                }
+            }
+        } // menu
+    } //contenedor menu
+    
+} //tab container

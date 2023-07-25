@@ -1,0 +1,130 @@
+:root {
+    --gradiente: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(20,30,48,1) 0%, rgba(36,59,85,1) 100%);
+    
+    --colorInput: #80868b;
+  
+    --fondo: #cccccc;
+      --primary: #243b55;
+    --fuente: roboto, sans-serif;
+    --letraNormal: 0.95rem;
+    --letraPeuqeña: 0.75rem;
+  }
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.tab-container {
+    display: flex;
+    flex-direction: column;
+    font-family: sans-serif;
+    position: relative;
+    height: 100vh;
+    padding: 5px;
+    overflow: hidden;
+    background: var(--fondo);
+  }
+
+  .cont-menu{
+    margin-top: 80vh;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+  }
+
+.menu{
+    width: 90vw;
+    height: 50px;
+    background: var(--gradiente);
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    position: absolute;
+    bottom: 1px;
+}
+
+.menu h1{
+    display: none;
+}
+
+.menu .seccion{
+    width: 50px;
+    height: 80%;
+    border-radius: 6px;
+    color: rgb(161, 161, 161);
+    background-color: var(--gradiente);
+    border: none;
+    font-size: 20px;
+}
+  
+  .tab-button .active {
+    /*background-color: #e90606;*/
+  }
+  
+  .tab-content {
+    margin: 0%;
+    padding: 0px;
+    height: 100vh;
+  }
+  
+  .tab-pane {
+    display: none;
+    background: rgb(51, 81, 170);
+    height: 90vh;
+    padding: 10px;
+  }
+  
+  .tab-pane.active {
+    display: block;
+  }
+
+  .seccion{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    padding-top: 5px;
+  }
+  
+  .seccion #icon-sec{
+    font-size: 20px;
+    max-height: 100%;
+    margin-bottom: 0%;
+  }
+
+  .seccion span{
+    font-size: 9px;
+  }
+
+  .cont-logo #img-icon2{
+    display: none;
+  
+  }
+
+  .cont-logo #img-icon-contraido{
+    display: none;
+  }
+
+  .cont-logo #titulo-logo-contraido{
+    display: none;
+  }
+
+  .boton-final{
+    display: none;
+  }
+
+  #img-icon-contraido{
+    display: none;
+  }
+  #titulo-logo-contraido{
+    display: none;
+  }

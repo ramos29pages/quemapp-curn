@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/dash.reg.mobile.css">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <button id="boton-prueba">EDITAR REGISTRO</button>
+    <div class="cont-editar">
+        <form id="form-editar" class="form-editar animate__animated animate__fadeInDown animate__faster">
+            <h2>Editar registro</h2>
+            <div class="label">
+                <label for="editName">Nombre</label>
+                <label for="editNickname">Apeliido</label>
+            </div>
+            <div class="control">
+                <input class="input-edit" id="editName" type="text">
+                <input class="input-edit" id="editNickname" type="text">
+            </div>
+            <div class="label">
+                <label for="editTipoId">Tipo Identificacion</label>
+                <label for="editId">Numero Identificacion</label>
+            </div>
+            <div class="control">
+                <input class="input-edit" id="editTipoId" type="text" >
+                <input class="input-edit" id="editId" type="text" disabled="true">
+            </div>
+            <div class="label">
+                <label for="editEmail">Correo electronico</label>
+                <label for="editCelular">Celular</label>
+            </div>
+            <div class="control">
+                <input class="input-edit" id="editEmail" type="email" required>
+                <input class="input-edit" id="editCelular" type="text">
+            </div>
+            <div class="label">
+                <label for="editIsmedic">Rol de usuario</label>
+                <label for="editCode" disabled>Codigo de acceso Medicos</label>
+            </div>
+            <div class="control">
+                <input class="input-edit" id="editIsmedic" type="text">
+                <input class="input-edit" id="editCode" type="text">
+            </div>
+            <div class="label">
+                <label for="editSexo">Sexo ?</label>
+                <label for="editContrasenia">Contraseña de acceso</label>
+            </div>
+            <div class="control">
+                <input class="input-edit" id="editSexo" type="text">
+                <input class="input-edit" id="editContrasenia" type="text">
+            </div>
+            <div class="control">
+                <button class="del">Cancelar</button>
+                <button class="act">Actualizar</button>
+            </div>
+        </form>
+    </div>
+<script src="../js/control.registrov2.js"></script>
+</body>
+</html>

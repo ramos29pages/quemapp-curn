@@ -1,0 +1,256 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@100;200;300;400;600;900&display=swap');
+
+
+* {
+    box-sizing: border-box;
+    overflow: hidden;
+    font-family: 'Fira Sans', sans-serif;
+}
+
+body{
+    background: #e0e0e0;
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+.container{
+    width: 100vw;
+    height: 90vh;
+    display: grid;
+    place-items: center;
+}
+
+.container h1{
+    font-size: 40px;
+    color: rgb(60, 60, 60);
+}
+
+.container #img-icon{
+    color: royalblue;
+    filter: drop-shadow(1px 0px 3px rgb(34, 67, 106));
+}
+
+.shownBox{
+    height: 70vh;
+    width: 70vw;
+    display: grid;
+    place-items: center;
+    border-radius: 15px;
+    box-shadow:  20px 20px 60px #bebebe,
+             -20px -20px 60px #bebebe;
+}
+
+#formulario{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    width: 60%;
+    padding: 20px;
+}
+
+#formulario input {
+    background-color: rgb(255, 255, 255);
+    height: 40px;
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border: none;
+    padding: 10px;
+}
+
+#formulario input:focus{
+    border: none;
+    outline : none;
+}
+
+#formulario input:active{
+    border: none;
+}
+
+.enviar{
+    display: none;
+}
+
+#formulario button{
+    background-color: royalblue;
+    width: 50px;
+    color: white;
+    border: none;
+    box-shadow: -3px 0px 5px rgb(66, 70, 147);
+    font-size: 15px;
+    border-radius: 5px;
+}
+
+#formulario button .enviar{
+    font-size: 12px;
+    font-weight: 600;
+}
+
+#formulario button:hover{
+    background-color: rgb(74, 96, 159);
+}
+
+.cont{
+    background-color: #f7f7f7;
+    width: 90%;
+    color: rgb(79, 79, 79);
+    font-weight: 300;
+    height: auto;
+    padding: 15px;
+    border-radius: 10px;
+    overflow-y :visible;
+    display: grid;
+    max-height: 80%;
+    font-size: 13px;
+    scroll-behavior: smooth;
+}
+#welcome{
+    color: rgb(143, 143, 143);
+}
+.cont .titulitos{
+    color: black;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.boxBrain{
+    justify-self: start;
+    background-color: #d3bcf6;
+    padding: 5px;
+    margin: 3px;
+    text-align: start;
+    width: auto;
+    max-width: 80%;
+    border-radius: 5px;
+    height: auto;
+    overflow-wrap: break-word;
+}
+
+.boxUser{
+    justify-self: end;
+    background-color: #bae0f5;
+    padding: 5px;
+    margin: 3px;
+    text-align: end;
+    width: auto;
+    max-width: 80%;
+    border-radius: 5px;
+    height: auto;
+    overflow-wrap: break-word;
+}
+
+#loader{
+    color: gray;
+    display: none;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: rgb(30, 30, 30);
+  }
+
+  .middle{
+    display: flex;
+    justify-content: center;
+    gap: 1px;
+    display: none;
+  }
+
+  .bar {
+    width: 5px;
+    height: 37px;
+    background: #fff;
+    display: inline-block;
+    transform-origin: bottom center;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    /*   box-shadow:5px 10px 20px inset rgba(255,23,25.2); */
+    animation: loader 1.2s linear infinite;
+  }
+  .bar1 {
+    animation-delay: 0.1s;
+  }
+  .bar2 {
+    animation-delay: 0.2s;
+  }
+  .bar3 {
+    animation-delay: 0.3s;
+  }
+  .bar4 {
+    animation-delay: 0.4s;
+  }
+  .bar5 {
+    animation-delay: 0.5s;
+  }
+  .bar6 {
+    animation-delay: 0.6s;
+  }
+  .bar7 {
+    animation-delay: 0.7s;
+  }
+  .bar8 {
+    animation-delay: 0.8s;
+  }
+  
+  @keyframes loader {
+    0% {
+      transform: scaleY(0.1);
+      background: #fff;
+    }
+    50% {
+      transform: scaleY(1);
+      background: royalblue
+    }
+    100% {
+      transform: scaleY(0.1);
+      background: transparent;
+    }
+  }
+  
+
+@media only screen and (min-width: 600px) {
+
+    .container{
+        width: 80vw;
+        height: 85vh;
+        font-size: 15px;
+        border-radius: 15px;
+    }
+    .enviar{
+        display: block;
+        margin-left: 5px;
+    }
+
+    .container h1{
+        font-size: 50px;
+    }
+    #formulario button{
+        width: 180px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #formulario input{
+        width: 250px
+    }
+
+    .boxUser{
+        font-size: 16px;
+        width: auto;
+        max-width: 80%;
+    }
+
+    .boxBrain{
+        font-size: 16px;
+        width: auto;
+        max-width: 80%;
+    }
+    
+}

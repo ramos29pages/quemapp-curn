@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chat con IA</title>
+    <link rel="stylesheet" href="index.css" />
+    <script
+      src="https://kit.fontawesome.com/45abf6fd04.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Q<i id="img-icon" class="fa-solid fa-fire-flame-curved"></i>emApp</h1>
+      
+      <div id="contenedor-mensajes" class="cont">
+        <p id="welcome">Aqui apareceran tus Respuestas...😊</p>
+      </div>
+      <div id="loader">  
+        Generando Resultados, Por favor espera...
+      </div>
+      <div class="middle">
+        <div class="bar bar1"></div>
+        <div class="bar bar2"></div>
+        <div class="bar bar3"></div>
+        <div class="bar bar4"></div>
+        <div class="bar bar5"></div>
+        <div class="bar bar6"></div>
+        <div class="bar bar7"></div>
+        <div class="bar bar8"></div>
+      </div>
+      <form id="formulario">
+        <input type="text" name="message" placeholder="Escribe un mensaje..." />
+        <button type="submit">
+          <i class="fa-solid fa-paper-plane"></i>
+          <p class="enviar">Enviar</p>
+        </button>
+      </form>
+    </div>
+    <p style="font-size: 10px; color: rgb(168, 168, 168)">
+      Creado por @Daniel Ramos
+    </p>
+    <script src="./index.js"></script>
+  </body>
+</html>
