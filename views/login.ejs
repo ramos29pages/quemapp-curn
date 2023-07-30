@@ -1,56 +1,61 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LOGIN</title>
-    <link rel="stylesheet" type="text/css" href="../css/login.css" />
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script
-      src="https://kit.fontawesome.com/45abf6fd04.js"
-      crossorigin="anonymous"
-    ></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LOGIN</title>
+  <link rel="stylesheet" type="text/css" href="../css/login.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="https://kit.fontawesome.com/45abf6fd04.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
-    <div class="cont-formulario">
+  <div class="cont-formulario">
 
-        <form action="" class="formulario">
-  
-          <div class="cont-icono">
-            <i id="icono"class="fa-solid fa-users-line"></i>
-          </div>
-          <h3 class="form_titulo">Inicio de sesion</h3>
-          <div class="show-first">
-            
-            <div class="row">
+    <form action="" class="formulario">
 
-              <p class="info infoName"></p>
-              <div class="form_div">
-                <input type="text" class="form_input" id="name" name="name" placeholder=" " value="12345" />
-                <label for="name" class="form_label">Nombre de usuario</label>
-                <i class="fa-solid fa-user icon-input"></i>
-              </div>
-
-              <p class="info infoPass"></p>
-              <div class="form_div">
-                <input type="password" id="password" name="password" class="form_input" placeholder=" " value="Ramos123"/>
-                <label for="password" class="form_label">Ingresa tu contraseña</label>
-                <i class="fa-solid fa-lock icon-input"></i>
-              </div>
-            </div>
-  
-          <div class="cont-button">
-            <input type="button" class="form_boton boton-registro" value="Ingresar" />
-          </div>
-
-          <p style="font-size: 13px"><a href="/contactos">Olvidé mi contraseña</a></p>
-          <p class="top" style="font-size: 13px;" >¿No tienes cuenta?</p>
-          <p style="font-size: 13px;">Puedes <a href="/registrar">crear una cuenta.</a>
-  
-          <h1 class="quemappText">Q<i id="img-icon" class="fa-solid fa-fire-flame-curved"></i>emApp</h1>
-        </form>
+      <div class="cont-icono">
+        <i id="icono" class="fa-solid fa-hospital"></i>
       </div>
-      <script src="../js/login.js"></script>
+      <h3 class="form_titulo">Bienvenido a QuemApp</h3>
+      <p class="inicio" style="margin-top:0ox ;">Inicio de sesión</p>
+      <!-- <div class="show-first"> -->
+
+      <div class="row">
+
+        <p class="info infoName"></p>
+        <div class="form_div form-div1">
+          <input type="text" class="form_input" id="name" name="name" placeholder=" " value="123456" />
+          <label for="name" class="form_label">Nombre de usuario</label>
+          <i class="fa-solid fa-user icon-input"></i>
+        </div>
+
+        <p class="info infoPass "></p>
+        <div class="form_div form-div2">
+          <input type="password" id="password" name="password" class="form_input" placeholder=" " value="Ramos123" />
+          <label for="password" class="form_label">Ingresa tu contraseña</label>
+          <i class="fa-solid fa-lock icon-input"></i>
+        </div>
+      </div>
+
+      <div class="cont-button">
+        <input type="button" class="form_boton boton-registro" value="Ingresar" />
+      </div>
+
+      <footer>
+        <p style="font-size: 13px"><a href="/contactos">Olvidé mi contraseña</a></p>
+        <p class="top" style="font-size: 13px;">¿No tienes cuenta?</p>
+        <p style="font-size: 13px;">Puedes <a href="/registrar">crear una cuenta.</a>
+      </footer>
+
+      <h1 class="quemappText">Q<i id="img-icon" class="fa-solid fa-fire-flame-curved"></i>emApp</h1>
+
+    </form>
+  </div>
+  <script src="../js/login.js"></script>
 </body>
+
 </html>

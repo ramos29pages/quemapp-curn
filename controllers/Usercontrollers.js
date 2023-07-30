@@ -161,7 +161,10 @@ exports.login = async (req, res) => {
 
     console.log('USUARIODB::',user.name);
     // Comparar la contraseña ingresada con la almacenada en la base de datos
+    console.log('USER.contrasenia ->',user.contrasenia);
+    console.log('FORM_PASS::: ',contrasenia);
     const match = await bcrypt.compare(contrasenia, user.contrasenia);
+    console.log(match);
 
     if (!match) {
       return res.status(401).json({ success: false, error: 'Contraseña incorrecta.' });

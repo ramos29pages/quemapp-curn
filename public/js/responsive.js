@@ -1,4 +1,4 @@
-console.log('Dash-Desktop Running...');
+console.log('responsive.js is running');
 let resizing = false;
 
 function renameSeccions(seccions = []){
@@ -24,7 +24,7 @@ function replaceStyles(){
         document.getElementById('__vista').href = './css/dash.desktop.css';
         document.getElementById('__registrar').href = '';
         __tratamiento.href = './css/dash.tratamientos.css';
-        __registro.href = '';
+        __registro.href = './css/dash.reg.mobile.css';
       } else {
         //console.log('Pantalla con menos de 600px de ancho');
         document.getElementById('__vista').href = './css/dash.mobile.css';

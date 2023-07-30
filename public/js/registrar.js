@@ -1,11 +1,12 @@
 
-
+console.log('REGISTRAR-JS');
 const form = document.forms[0];
 const caja1 = document.querySelector('.show-first');
 const caja2 = document.querySelector('.show-second');
 const botonBack = document.querySelector('.boton-back');
 const botonRegistro = document.querySelector('.boton-registro');
 const botonNext = document.querySelector('.boton-next');
+const goHome = document.getElementById('goHome');
 
 let ancho = window.innerWidth;
 let informacion = '';
@@ -250,6 +251,12 @@ function registrarUsuario(usuario) {
     })
     .catch(error => console.error('Error al registrar usuario:', error));
   }
+
+goHome.addEventListener('click', (e)=>{
+ e.preventDefault();
+ e.stopPropagation();
+ location.replace('./');
+});
   
 
 function evaluarTamañoVentana() {

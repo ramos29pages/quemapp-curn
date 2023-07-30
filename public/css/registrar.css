@@ -41,6 +41,9 @@ h1 {
     display: flex;
     justify-content: center;
     top: 20px;
+
+    animation: bounceIn;
+    animation-duration: 1s;
 }
 
 .cont-formulario #icono{
@@ -58,16 +61,25 @@ h1 {
   height: 100vh;
   display: grid;
   place-content: center;
+
+  
 }
 
 .quemappText{
   color: gray;
-  margin-top: 25px;
+  margin-top: 20px;
   bottom: 30px;
+  font-size: 20px;
+  animation: bounceIn;
+    animation-duration: 3.5s;
 }
 
 .form_titulo {
-  font-weight: 400;
+  font-weight: 600;
+
+  animation: bounceIn;
+    animation-duration: 1.2s;
+
 }
 
 .show-first{
@@ -89,6 +101,48 @@ h1 {
   width: 350px;
   margin: 6px;
 }
+
+.i1{
+  animation: bounceIn;
+  animation-duration: 1.4s;
+}
+.i2{
+  animation: bounceIn;
+  animation-duration: 1.5s;
+}
+.i3{
+  animation: bounceIn;
+  animation-duration: 1.6s;
+}
+.i4{
+  animation: bounceIn;
+  animation-duration: 1.7s;
+}
+.i5{
+  animation: bounceIn;
+  animation-duration: 1.8s;
+}
+.i6{
+  animation: bounceIn;
+  animation-duration: 1.9s;
+}
+.i7{
+  animation: bounceIn;
+  animation-duration: 1.4s;
+}
+.i8{
+  animation: bounceIn;
+  animation-duration: 1.5s;
+}
+.i9{
+  animation: bounceIn;
+  animation-duration: 1.6s;
+}
+.i10{
+  animation: bounceIn;
+  animation-duration: 1.7s;
+}
+
 
 .form_input {
   position: absolute;
@@ -122,6 +176,9 @@ h1 {
     display: flex;
     justify-content: center;
     gap: 8px;
+
+    animation: bounceIn;
+    animation-duration: 2s;
 }
 
 .form_boton {
@@ -218,6 +275,11 @@ h1 {
   background-color: crimson;
 }
 
+.contenedor-info{
+  animation: bounceIn;
+  animation-duration: 2.1s;
+}
+
 .contenedor-info p{
   margin: 0;
   margin-top: 5px;
@@ -231,10 +293,16 @@ h1 {
       justify-content: end;
     }
     .formulario{
-      height: 90vh;
-      border-radius: 50px;
+      height: 94vh;
+      min-height: 550px;
+      max-height: 600px;
+      border-radius: 30px;
       margin-right: 40px;
       display: block;
+
+      animation: fadeInRight;
+  animation-duration: 1s;
+
     }
     .quemappText{
       display: none;

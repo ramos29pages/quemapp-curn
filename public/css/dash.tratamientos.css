@@ -52,7 +52,17 @@ h2{
     scrollbar-color: crimson;
 }
 
-.respuestas .respuesta{
+.respuesta:nth-child(odd){
+    animation: fadeInLeft;
+    animation-duration: .5s;
+  }
+.respuesta:nth-child(even){
+    animation: fadeInRight;
+    animation-duration: .5s;
+  }
+
+
+.contenedor .respuestas .respuesta{
     padding: 10px;
     margin-left: 70px;
     width: 95%;

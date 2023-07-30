@@ -6,6 +6,7 @@ header {
 
 .tab-container .tab-content {
   background: rgb(235, 240, 255);
+  font-family: 'Montserrat Alternates', sans-serif;
 }
 .tab-container .tab-content .tab-pane {
   display: none;
@@ -459,6 +460,8 @@ header {
   }
   .tab-container .tab-content .tab-pane .cont-contenido .caracteristicas form .column2 .cont-tipos .quemaduras {
     background: white;
+    display: grid;
+    align-items: center;
     padding: 5px;
     border-radius: 20px;
     border-top-left-radius: 0px;
@@ -474,7 +477,25 @@ header {
     padding: 5px;
     border-radius: 15px;
     margin: 5px;
+
+
   }
+
+  /*QUEMADURA PERFORMANCE*/
+
+  .tab-container .tab-content .tab-pane .cont-contenido .caracteristicas form .column2 .cont-tipos .quemaduras .quemadura:nth-child(odd){
+    /* background: red!important; */
+    animation: fadeInLeft;
+    animation-duration: .3s!important;
+  }
+
+  .tab-container .tab-content .tab-pane .cont-contenido .caracteristicas form .column2 .cont-tipos .quemaduras .quemadura:nth-child(even){
+    /* background: red!important; */
+    animation: fadeInLeft;
+    animation-duration: .5s!important;
+  }
+
+
   .tab-container .tab-content .tab-pane .cont-contenido .caracteristicas form .column2 .cont-tipos .quemaduras .quemadura .titulo {
     text-align: center;
     font-weight: 400;

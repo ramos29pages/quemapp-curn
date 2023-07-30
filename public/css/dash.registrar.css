@@ -269,6 +269,7 @@
     height: 75vh;
     width: 90vw;
     margin-top: 20px;
+    padding-top: 10px;
   }
 
   .quemaduras{
@@ -280,6 +281,16 @@
     margin-bottom: 10px;
   }
 
+  .quemadura:nth-child(odd){
+    animation: fadeInLeft;
+    animation-duration: .5s;
+  }
+
+  .quemadura:nth-child(even){
+    animation: fadeInRight;
+    animation-duration: .7s;
+  }
+
   .quemaduras #title{
     color: gray;
   }
@@ -288,6 +299,7 @@
     padding: 5px;
     border-radius: 15px;
     margin: 5px;
+    max-height: 90px;
   }
 
   .quemadura .titulo{
@@ -381,6 +393,9 @@
 
   form .column3{
     position: relative;
+    /* background: crimson; */
+    margin-top: 20px;
+    padding-top: 20px;
     height: 80vh;
     width: 100%;
     display: grid;
@@ -468,6 +483,10 @@
     cursor: pointer;
     transition: all .2s ease-in;
     font-size: 15px;
+  }
+
+  #icono{
+    background-color: crimson!important;
   }
   
   
