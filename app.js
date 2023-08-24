@@ -50,33 +50,12 @@ mongoose.connect(uri, config)
   .then(() => {
     console.log(`Conexión a la base de datos *${dbname}* establecida.`);
     // Iniciar el servidor
-    quemapp.listen(port, () => {
-      console.log(`Servidor iniciado en http://localhost:${port}`);
-    });
+    
   })
   .catch((error) => {
     console.error('Ocurrió un error al conectar a la base de datos:', error);
-  })
+  });
 
-/*
-
-quemapp.get('/', (req, res)=>{
-  res.sendFile('./public/dash.html', { root: __dirname});
-});
-
-// Ruta para manejar el envío de mensajes
-
-quemapp.get('/registrar', (req, res)=>{
-  let [name, rol] = [ 'Ramos', 'admin' ];
-});
-
-quemapp.post('/chat', async (req, res) => {
-  let solicitud = req.body.message;
-
-  // Enviar el mensaje a ChatGPT
-  const response = await GenerarDiagnostico(solicitud);
-
-  // Retornar la respuesta de ChatGPT
-  res.json({ response });
-});
-*/
+  quemapp.listen(port, () => {
+    console.log(`Servidor iniciado en http://localhost:${port}`);
+  });
