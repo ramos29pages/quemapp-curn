@@ -12,7 +12,7 @@
     -->
 
     <!-- Live refresh CSS, HTML and JS in browser. -->
-    <!-- <script src="live.js" ></script> -->
+    <!-- <script src="../js/live.js" ></script> -->
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     
@@ -62,7 +62,7 @@
                 <div class="cont-contenido">
                     <div class="caracteristicas">
                         <form>
-                            <div class="column1 ">
+                           <div class="column1 ">
                                 <div class="datos-paciente animate__animated animate__bounceIn animate__faster" >
                                     <p class="titulo" style="font-weight: bold;">Caracteristicas del paciente</p>
                                     <div class="entrada">
@@ -75,7 +75,7 @@
                                     </div>
                                     <div class="entrada">
                                             <label for="talla">Talla (cm)</label>
-                                            <input type="text" id="talla" name="talla" placeholder="CM">
+                                            <input type="text" id="talla" name="talla" placeholder="cm">
                                     </div>
                                 </div>
                                 <div class="agente-etiologico animate__animated animate__bounceIn">
@@ -167,9 +167,9 @@
                                 </div>
                             </div>
 
-                            <div class="column3 animate__animated animate__bounceIn">
+                            <div class="column3 ">
                                 <div class="cuerpo">
-                                    <div class="body" >
+                                    <div class="body animate__animated animate__bounceIn" >
                                         <h3>Superficie Corporal quemada</h3>
                                         <label for="cuerpo" >Partes del cuerpo</label>
                                         <select  id="cuerpo" name="parteCuerpo">
@@ -194,9 +194,10 @@
                                     </div>
                                 </div>
                             </div>
+
                             <div class="boton-final">
                                 <button id="boton">Completado !</button>
-                            </div>
+                            </div> 
                         </form>
                     </div>
                 </div>  <!--Contenedor contenido-->
@@ -421,7 +422,7 @@
         <script src="../js/control.registro.js"></script>
         <script src="../js/loader.js"></script>      
         <script src="../js/dash.registrar.js" ></script>
-        <script src="../js/live.js"></script>
+        
         
   </body>
 </html>

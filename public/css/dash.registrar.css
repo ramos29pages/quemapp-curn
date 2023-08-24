@@ -116,13 +116,16 @@
     width: 100%;
     height: 85%;
     display: grid;
-    gap: 2px;
-    grid-template-columns: 1fr;
-    
+    justify-content: stretch;
+
+    /* background: magenta!important; */
+    padding: 5px;
   }
 
+
+  /*COLUMNA 1 DE INGRESO CARACTERISTICAS Y AGENTE*/
+
   .caracteristicas{
-    height: 100%;
     width: 100%;
   }
 
@@ -130,7 +133,6 @@
     display: grid;
     place-content: center;
     grid-template-columns: 1fr;
-    height: 90%;
     width: 100%;
     font-family: 'Source Sans Pro', sans-serif;
     font-weight: 300;
@@ -143,18 +145,19 @@
     margin: 15px;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 30px repeat(3, 1fr);
+    grid-template-rows: 15% repeat(3, 1fr);
     padding: 5px;
     width: 93%;
     border-radius: 20px;
     padding: 10px;
     /*box-shadow: 0px 0px 8px 1px rgba(104, 104, 104, 0.284);*/
     color: gray;
+
   }
 
   .caracteristicas form .column1 .datos-paciente .entrada{
     margin: 3px;
-    height: 40px;
+    height: 35px;
     width: 100%;
     display: flex;
     justify-content: space-around;
@@ -191,7 +194,7 @@
 
   .caracteristicas form .column1 .agente-etiologico .entrada{
     margin: 3px;
-    height: 40px;
+    height: 35px;
     width: 100%;
     display: flex;
     justify-content: space-around;
@@ -251,34 +254,31 @@
   }
 
 
-  /*PARTE EUMADURAS*/
+  /*COLUMNA 2 PARTE QUEMADURAS*/
 
   form{
     padding: 5px;
   }
 
-  form .column2{
-    height: 82vh;
+/*   form .column2{
     width: 100%;
     display: grid;
     justify-content: center;
     display: none;
-  }
+    background: gray;
+  } */
 
   form .column2 .cont-tipos{
-    height: 75vh;
     width: 90vw;
-    margin-top: 20px;
-    padding-top: 10px;
+    /* background-color: red; */
   }
 
   .quemaduras{
     background: white;
-    padding: 5px;
+    padding: 3px ;
     border-radius: 20px;
     border-top-left-radius: 0px;
     border-top-right-radius: 0px;
-    margin-bottom: 10px;
   }
 
   .quemadura:nth-child(odd){
@@ -297,10 +297,13 @@
   
   .quemadura{
     padding: 5px;
-    border-radius: 15px;
+    border-radius: 10px;
     margin: 5px;
-    max-height: 90px;
+    max-height: 75px;
+    border: 1px solid #ccc;
   }
+
+
 
   .quemadura .titulo{
     text-align: center;
@@ -324,21 +327,25 @@
   padding: 5px;
   color: gray;
   font-weight: 600;
+  position: relative;
 }
 
 .quemadura .check p{
   width: 80%;
   height: 38px;
-  font-size: 14px;
+  font-size: 12px;
   padding: 2px;
 }
 
+
 .quemadura .check > #grado1{
-  width: 25px;
-  height: 25px;
+  width: 35px;
   border: none;
   outline: none;
-  background: red;
+  position: absolute;
+  right: 10px;
+  height: 25px;
+  bottom: 40px;
 }
 
 .quemadura .check > #grado1[type="radio"]:checked{
@@ -350,6 +357,7 @@
     padding: 10px;
     display: flex;
     justify-content: space-evenly;
+    /* background-color: rgb(27, 220, 20); */
   }
 
   .cont-botones > .anterior {
@@ -393,10 +401,8 @@
 
   form .column3{
     position: relative;
-    /* background: crimson; */
-    margin-top: 20px;
-    padding-top: 20px;
-    height: 80vh;
+    margin-top: 10px;
+    height: 78vh;
     width: 100%;
     display: grid;
     display: none;
@@ -419,9 +425,9 @@
   }
 
   .cuerpo .body{
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     max-height: 60vh;
-    padding: 20px;
+    padding: 10px;
     border-radius: 20px;
   }
 
