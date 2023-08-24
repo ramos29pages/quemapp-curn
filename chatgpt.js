@@ -1,7 +1,7 @@
 const { Configuration, OpenAIApi } = require("openai");
 
 const configuration = new Configuration({
-  apiKey: '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',
+  apiKey: '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' //CLAVE ESTABLECIDA 24-AGOSTO-2023
 });
 
 const openai = new OpenAIApi(configuration);
