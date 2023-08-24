@@ -5,7 +5,6 @@ const openai = require('openai'); // API
 const GenerarDiagnostico = require('./controllers/gpt');
 const userRoutes = require('./routes/userRoutes');
 const mongoose = require('mongoose');
-const session = require('express-session');
 
 //clave de API
 // const apiKey = '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';
@@ -57,10 +56,12 @@ mongoose.connect(uri, config)
   .then(() => {
     console.log(`Conexión a la base de datos *${dbname}* establecida.`);
     // Iniciar el servidor
-    quemapp.listen(port, () => {
-      console.log(`Servidor iniciado en http://localhost:${port}`);
-    });
+    
   })
   .catch((error) => {
     console.error('Ocurrió un error al conectar a la base de datos:', error);
+  });
+
+  quemapp.listen(port, () => {
+    console.log(`Servidor iniciado en http://localhost:${port}`);
   });
