@@ -1,6 +1,6 @@
 const express = require('express'); // servidor de express
-const path = require('path'); 
-const morgan = require('morgan'); 
+const path = require('path');
+const morgan = require('morgan');
 const openai = require('openai'); // API
 const GenerarDiagnostico = require('./controllers/gpt');
 const userRoutes = require('./routes/userRoutes');
@@ -14,20 +14,20 @@ const uri = 'mongodb://localhost:27017/' + dbname;
 const quemapp = express();
 const port = 3000;
 const config = {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
 };
 
 // openai.api_key = apiKey;
 
-quemapp.set('views', path.join( __dirname, 'views'));
+quemapp.set('views', path.join(__dirname, 'views'));
 quemapp.set('view engine', 'ejs');
 
 // Middlewares para parsear el cuerpo de las solicitudes HTTP
 quemapp.use(express.urlencoded({ extended: false }));
 quemapp.use(express.json());
 //carpeta de archivos publicos
-quemapp.use(express.static('public', { 
+quemapp.use(express.static('public', {
   setHeaders: (res, path) => {
     if (path.endsWith('.js')) {
       res.setHeader('Content-Type', 'application/javascript');
@@ -40,7 +40,7 @@ quemapp.use(morgan('dev'));
 //HOME 
 
 quemapp.use('/dash', (req, res, next) => {
-  if(req.session && req.session.usuario){
+  if (req.session && req.session.usuario) {
     console.log('VALIDACION DE SESION ACTIVA', req.session);
     res.status(200); // Cambio realizado aquí
     next();
@@ -56,12 +56,11 @@ mongoose.connect(uri, config)
   .then(() => {
     console.log(`Conexión a la base de datos *${dbname}* establecida.`);
     // Iniciar el servidor
-    
+    quemapp.listen(port, () => {
+      console.log(`Servidor iniciado en http://localhost:${port}`);
+    });
+
   })
   .catch((error) => {
     console.error('Ocurrió un error al conectar a la base de datos:', error);
-  });
-
-  quemapp.listen(port, () => {
-    console.log(`Servidor iniciado en http://localhost:${port}`);
   });

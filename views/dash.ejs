@@ -22,7 +22,7 @@
     <link rel="stylesheet" id="__registrar" href="">
     <link rel="stylesheet" id="__codigos" href="../css/dash.codigos.css">
     <link rel="stylesheet" href="../css/loader.css">
-
+    <link rel="stylesheet" href="../css/codeGenerator.css">
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-bold-straight/css/uicons-bold-straight.css'>
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-solid-straight/css/uicons-solid-straight.css'>
@@ -337,24 +337,41 @@
                 </div>
                 <hr>
                 <h2 id="titulo-registro">Generación de codigos de acceso.</h2>
-                <table clas="animate__animated animate__fadeIn animate__faster" id="cont-generador">
-                    <thead id="head-generador">
-                        <td>__id</td>
-                        <td>Estado</td>
-                        <td>fecha</td>
-                        <td>Código</td>
-                        <td>Acciones</td>
-                    </thead>
-                    <tbody id="body-generador">
-                        <td><input type="hidden" value="value"></td>
-                    </tbody>
-                </table>
-                <div class="cont-boton-generar">
-                    <button id="addcodes">
-                        <i class="fa-solid fa-circle-plus"></i>
-                        Añadir Nuevo
-                    </button>
-                </div>
+                <section class="cont-generar">
+                    <article class="cont-codigos">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Estado</th>
+                                    <th>Fecha generacion</th>
+                                    <th>Usuario</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="codigo-nuevo">
+                                    <td>xyzqwerty</td>
+                                    <td>Activo</td>
+                                    <td>1/8/2023, 12:31:23</td>
+                                    <td>12345</td>
+                                </tr>
+                                <tr class="codigo-antiguo">
+                                    <td>xyzqwerty</td>
+                                    <td>Usado</td>
+                                    <td>1/8/2023, 12:31:23</td>
+                                    <td>12345</td>
+                                </tr>
+                                <tr class="codigo-antiguo">
+                                    <td>xyzqwerty</td>
+                                    <td>Usado</td>
+                                    <td>1/8/2023, 12:31:23</td>
+                                    <td>12345</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </article>
+                    <button class="btn-newcode"><b>+</b></button>
+                </section>
             </div>
 
              <!--@RECOMENDACIONES-->
@@ -422,7 +439,7 @@
         <script src="../js/control.registro.js"></script>
         <script src="../js/loader.js"></script>      
         <script src="../js/dash.registrar.js" ></script>
-        
+        <script src="../js/codeGenerator.js"></script>
         
   </body>
 </html>

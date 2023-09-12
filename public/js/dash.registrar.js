@@ -1,6 +1,4 @@
 
-
-
 const d = document;
 const form = d.forms[0];
 const btnColumn1 = d.getElementById('btn-column1');
@@ -75,14 +73,29 @@ btnColumn3Siguiente.addEventListener('click', async (dr) => {
 
     let datos = await validarDatos();
     if (datos && datos.valid) {
-        form.reset();
         let botonAccion = dr.target;
+        // form.reset();
         botonAccion.style.visibility = 'hidden';
-        console.log(botonAccion);
+        console.log(' DATOS ', datos);
         sendData(botonAccion, datos);
     }
 
 }); //accion env end
+
+botonGenerar.addEventListener('click', async (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    let datos = await validarDatos();
+    if (datos && datos.valid) {
+        // form.reset();
+        /* let botonAccion = e.target;
+        botonAccion.style.visibility = 'hidden'; */
+        console.log(botonAccion);
+        // sendData(botonAccion, datos);
+    }
+
+
+});
 
 async function validarDatos() {
     /*
@@ -247,21 +260,54 @@ async function validarDatos() {
 
 }
 
-
-botonGenerar.addEventListener('click', async (e) => {
-    e.preventDefault();
-    e.stopPropagation();
-    let datos = await validarDatos();
-    if (datos && datos.valid) {
-        form.reset();
-        let botonAccion = e.target;
-        botonAccion.style.visibility = 'hidden';
-        console.log(botonAccion);
-        sendData(botonAccion, datos);
-    }
+async function sendData(botonAccion, datos) {
+    let btnAccion = botonAccion;
+    let user = await getData(datos.agent);
+    let body = await JSON.stringify(user);
+    let animation = 1;
+    console.log('BOTON DE ACCION :: ->',btnAccion.innerText);
+    console.log('USER OBEJCT :: -> ', body);
+    // console.log(body);
+    const response = await sendMessageToChatGPT(body);
+    console.log('respuesta de GPT :: ', response);
 
 
-});
+
+/*     //Creando div para seccion tratamientos
+    let div = d.createElement('div');
+    div.classList.add('respuesta');
+    let p = d.createElement('p');
+    p.classList.add('titulo');
+    p.innerText = 'Respuesta generada - ' + new Date().toLocaleString();
+    div.appendChild(p);
+    let p2 = d.createElement('p');
+    p2.classList.add('res');
+    p2.innerText = response;
+    div.appendChild(p2);
+
+    contRespuestas.appendChild(div);
+
+    setTimeout(() => {
+        Swal.fire(
+            {
+                html: '<p class="infoPop" >Respuesta generada con exito. Puedes verla en la seccion de tratamientos.</p>',
+                icon: 'success',
+                showConfirmButton: true,
+                confirmButtonText: 'ver en tratamientos',
+                confirmButtonColor: '#243b55',
+                width: '400'
+            }
+        ).then((res) => {
+            console.log(res);
+            if (res.isConfirmed) {
+                btnAccion.style.visibility = 'visible';
+                showTratamientos();
+            }
+
+        });
+    }, 3000); */
+
+}
 
 async function getData(agente) {
 
@@ -296,51 +342,6 @@ async function getData(agente) {
     return userdata;
 };
 
-async function sendData(botonAccion, datos) {
-    let accion = botonAccion;
-    let user = await getData(datos.agent);
-    let body = await JSON.stringify(user);
-    let animation = 1;
-    console.log(accion);
-    // console.log(body);
-    const response = await sendMessageToChatGPT(body);
-    console.log('respuesta de GPT :: ', response);
-
-    //Creando div para seccion tratamientos
-    let div = d.createElement('div');
-    div.classList.add('respuesta');
-    let p = d.createElement('p');
-    p.classList.add('titulo');
-    p.innerText = 'Respuesta generada - ' + new Date().toLocaleString();
-    div.appendChild(p);
-    let p2 = d.createElement('p');
-    p2.classList.add('res');
-    p2.innerText = response;
-    div.appendChild(p2);
-
-    contRespuestas.appendChild(div);
-
-    setTimeout(() => {
-        Swal.fire(
-            {
-                html: '<p class="infoPop" >Respuesta generada con exito. Puedes verla en la seccion de tratamientos.</p>',
-                icon: 'success',
-                showConfirmButton: true,
-                confirmButtonText: 'ver en tratamientos',
-                confirmButtonColor: '#243b55',
-                width: '400'
-            }
-        ).then((res) => {
-            console.log(res);
-            if (res.isConfirmed) {
-                accion.style.visibility = 'visible';
-                showTratamientos();
-            }
-
-        });
-    }, 3000);
-}
-
 async function sendMessageToChatGPT(user) {
     let response = await fetch("/chat", {
         method: "POST",
@@ -353,6 +354,11 @@ async function sendMessageToChatGPT(user) {
     let data = await response.json();
     return data.response;
 };
+
+
+function crearTratamiento(response) {
+    
+}
 
 
 const tabButtons = document.querySelectorAll('.tab-button');
