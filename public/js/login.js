@@ -88,9 +88,11 @@ async function iniciarsesion(usuario, contrasenia) {
     });
   
     const data = await response.json();
+    let sessionid = data.sessionid;
+    console.log('DEBUG:: ',data);
     
     if(data.success){
-        console.log(data.success);
+        console.log('DATA SUCCESS ::: ',data.success);
         Swal.fire({
             icon: 'success',
             html: `<p class="infoPop">Inicio de sesion exitoso 😎</p>`,
@@ -101,7 +103,9 @@ async function iniciarsesion(usuario, contrasenia) {
         }).then( data =>{
             console.log(data.dismiss);
             if(data.dismiss == 'timer'){
-                location.href = '/dash';
+                console.log('SESSION ID:: ', sessionid);
+
+                location.href = `/dash`;
             }
         });
     }else{

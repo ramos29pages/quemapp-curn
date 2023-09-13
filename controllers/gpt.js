@@ -1,5 +1,5 @@
 const { Configuration, OpenAIApi } = require("openai");
-const apiKey = " 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 "
+const apiKey = "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"
 
 const configuration = new Configuration({
   apiKey: apiKey,
@@ -18,7 +18,7 @@ async function gerenacion(user) {
    let prompt = 'Hola.. esta es una prueba.'
 
   const completion = await openai.createChatCompletion({
-    model: "davinci-002",
+    model: "gpt-3.5-turbo",
     messages: [{ role: "user", content: prompt }],
     max_tokens: 1000,
   });

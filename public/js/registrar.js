@@ -243,7 +243,7 @@ function registrarUsuario(usuario) {
             timerProgressBar: true,
         }).then( res =>{
             if(res.isConfirmed){
-                location.href = '/';
+                location.href = '/home';
             };
         });
 

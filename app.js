@@ -1,4 +1,5 @@
 const express = require('express'); // servidor de express
+const session = require('express-session');
 const path = require('path');
 const morgan = require('morgan');
 const openai = require('openai'); // API
@@ -37,18 +38,13 @@ quemapp.use(express.static('public', {
 //logger de solicitudes http mod 'Dev'
 quemapp.use(morgan('dev'));
 
-//HOME 
+quemapp.use( session({
+  secret: '12344321',
+  resave : true,
+  saveUninitialized: true
+}));
 
-quemapp.use('/dash', (req, res, next) => {
-  if (req.session && req.session.usuario) {
-    console.log('VALIDACION DE SESION ACTIVA', req.session);
-    res.status(200); // Cambio realizado aquí
-    next();
-  }
 
-  next();
-
-});
 
 quemapp.use(userRoutes);
 

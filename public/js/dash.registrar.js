@@ -352,6 +352,7 @@ async function sendMessageToChatGPT(user) {
     });
 
     let data = await response.json();
+    console.log('DATOS DE RUTA **/CHAT**',data);
     return data.response;
 };
 

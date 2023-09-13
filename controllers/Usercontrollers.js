@@ -2,22 +2,52 @@
 const User = require('../mongo/User');
 const bcrypt = require('bcrypt');
 const GenerarDiagnostico = require('./gpt');
+const session = require('express-session');
 
-async function cerrarConexion(){
-  await mongoose.connection.close();
-  console.log('BD Closed');
+exports.cerrarSession = async function (req, res) {
+  req.session.destroy(err => {
+    if (err) {
+      console.error('Error al cerrar sesión:', err);
+      res.status(500).send('Error al cerrar sesión');
+    } else {
+      res.status(200).send('Sesión cerrada exitosamente');
+    }
+  });
 }
 
-exports.vistaLogin = async (req, res) =>{
+exports.vistaLogin = async (req, res) => {
   res.render('login');
 };
 
-exports.vistaRegistrar = async (req, res)=>{
+exports.vistaRegistrar = async (req, res) => {
   res.render('registrar');
 };
 
-exports.vistaDash = async (req, res)=>{
-  res.render('dash');
+exports.vistaDash = async (req, res) => {
+
+  console.log('USUARIO ACTIVO EN SESSION: --> ', req.session.username);
+  console.log('USUARIO ACTIVO EN SESSION: --> ', req.session.userrol);
+
+  if (req.session.userrol == 0) {
+    res.render('dash', {
+      username: req.session.username,
+      userrol: 'Usuario General'
+    });
+  } else if (req.session.userrol == 1) {
+    res.render('dash', {
+      username: req.session.username,
+      userrol: 'Médico'
+    });
+  } else if (req.session.userrol == 2) {
+    res.render('dash', {
+      username: req.session.username,
+      userrol: 'Superadministrador'
+    });
+  } else if( !(req.session?.userrol) ){
+    res.redirect('/home');
+  }
+
+
 };
 
 exports.generar = async (req, res) => {
@@ -37,10 +67,10 @@ exports.registrarUsuario = async (req, res) => {
   const user = req.body;
 
   try {
-    const existingUser = await User.findOne({$or: [{email: user.email}, {id: user.id}]});
+    const existingUser = await User.findOne({ $or: [{ email: user.email }, { id: user.id }] });
 
     if (existingUser) {
-      return res.status(409).json({message: 'Ya existe un usuario con el mismo correo electrónico o identificación.', status: false,});
+      return res.status(409).json({ message: 'Ya existe un usuario con el mismo correo electrónico o identificación.', status: false, });
     }
 
     const hashedPassword = await bcrypt.hash(user.contrasenia, 10);
@@ -63,7 +93,7 @@ exports.registrarUsuario = async (req, res) => {
     await newUser.save();
     console.log('Usuario agregado correctamente.');
 
-    res.json({status: true, message:'Usuario registrado correctamente.'});
+    res.json({ status: true, message: 'Usuario registrado correctamente.' });
   } catch (error) {
     console.error('Ocurrió un error al agregar el usuario:', error);
     res.status(500).send('CATCH: Ocurrió un error al agregar el usuario.');
@@ -105,7 +135,7 @@ exports.buscarUsuario = async (req, res) => {
       res.status(404).send('Usuario no encontrado.');
       return;
     }
-    
+
     console.log('Usuario encontrado.');
     res.send(user);
 
@@ -159,12 +189,13 @@ exports.login = async (req, res) => {
       return res.status(401).json({ success: false, error: 'Nombre de usuario incorrecto.' });
     }
 
-    console.log('USUARIODB::',user.name);
+    console.log('USUARIODB::', user.name);
     // Comparar la contraseña ingresada con la almacenada en la base de datos
-    console.log('USER.contrasenia ->',user.contrasenia);
-    console.log('FORM_PASS::: ',contrasenia);
+    console.log('USER.contrasenia ->', user.contrasenia);
+    console.log('FORM_PASS::: ', contrasenia);
     const match = await bcrypt.compare(contrasenia, user.contrasenia);
-    console.log(match);
+    console.log('USER MATCH::: ', match);
+    console.log('USER FOUND::: ', user);
 
     if (!match) {
       return res.status(401).json({ success: false, error: 'Contraseña incorrecta.' });
@@ -172,7 +203,9 @@ exports.login = async (req, res) => {
 
     // Generar y enviar un token de sesión
     //const token = jwt.sign({ username: user.username }, 'secret-key');
-    return res.status(200).json({ success: true, message: 'Ok'});
+    req.session.username = user.name;
+    req.session.userrol = user.isMedic;
+    return res.status(200).json({ success: true, message: 'Ok', sessionid: user?._id });
   } catch (error) {
     // Manejar errores específicos
     console.error(error);
@@ -181,4 +214,4 @@ exports.login = async (req, res) => {
 };
 
 
-      
+

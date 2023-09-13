@@ -1,0 +1,34 @@
+<div class="cont-nameUser ">
+    <div class="infoUser">
+        <h2>Hola, <span id="nameUser">
+                <%= username %>
+            </span></h2>
+        <p><%= userrol %> </p>
+    </div>
+    <div class="close-session">
+        <i title="Cerrar Sesión" class="fi fi-ss-sign-out-alt" onclick="cerrarSesion()"></i>
+    </div>
+</div>
+
+<script>
+    function cerrarSesion() {
+
+        let save = confirm('Está seguro de cerrar sesión ? ');
+        // Realiza una solicitud AJAX al servidor para cerrar la sesión
+        if (save) {
+            fetch('/logout', {
+                method: 'POST', // Puedes usar POST o cualquier otro método que prefieras
+                credentials: 'same-origin' // Incluye esto si tu sesión usa cookies
+            })
+                .then(response => {
+                    if (response.status === 200) {
+                        // Redirige a la página de inicio de sesión o donde desees después de cerrar sesión
+                        window.location.href = '/home'; // Cambia '/login' a la URL deseada
+                    }
+                })
+                .catch(error => {
+                    console.error('Error al cerrar sesión:', error);
+                });
+        }
+    }
+</script>
