@@ -3,8 +3,38 @@ const form = document.forms[0];
 const boton = document.querySelector('.boton-registro');
 const infoName = document.querySelector(".infoName");
 const infoPass = document.querySelector(".infoPass");
+
 const popOk = document.querySelector(".pop-ok");
 let statusName, statusPass = false;
+
+/* window.addEventListener('load', ()=>{
+    let icono = document.querySelector('.cont-icono');
+    let iconoText = document.querySelector('.form_titulo');
+    let textInicio = document.querySelector('.inicio');
+    let inputName = document.querySelector('.form-div1');
+    let inputPass = document.querySelector('.form-div2');
+    let boton = document.querySelector('.cont-button');
+    let foot = document.querySelector('footer');
+
+    let array = [icono, iconoText, textInicio, inputName, inputPass, boton, foot];
+
+    function animar(items = []){
+        let delay = 100;
+        for(let i = 0; i < items.length; i++){
+            setTimeout(()=>{
+                items[i].style.display = 'block';
+                if(i==5){
+                    items[5].style.display = 'flex';
+                }
+            }, delay);
+        
+            delay+=200;
+        }
+    }
+
+    animar(array);
+});
+ */
 
 boton.addEventListener('click', async (ramos)=>{
     ramos.stopPropagation();
@@ -58,9 +88,11 @@ async function iniciarsesion(usuario, contrasenia) {
     });
   
     const data = await response.json();
+    let sessionid = data.sessionid;
+    console.log('DEBUG:: ',data);
     
     if(data.success){
-        console.log(data.success);
+        console.log('DATA SUCCESS ::: ',data.success);
         Swal.fire({
             icon: 'success',
             html: `<p class="infoPop">Inicio de sesion exitoso 😎</p>`,
@@ -71,7 +103,9 @@ async function iniciarsesion(usuario, contrasenia) {
         }).then( data =>{
             console.log(data.dismiss);
             if(data.dismiss == 'timer'){
-                location.href = '/dash';
+                console.log('SESSION ID:: ', sessionid);
+
+                location.href = `/dash`;
             }
         });
     }else{

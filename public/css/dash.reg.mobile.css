@@ -204,6 +204,7 @@
     font-size: 15px;
   }
 
+
   .info{
     background-color: rgb(219, 219, 219);
     font-size: 12px;
@@ -220,8 +221,8 @@
     color: var(--primary);
     text-align: left;
     margin-left: 5px;
-    font-size: 13px;
-    background: var(--fondo);
+    font-size: 12px;
+    background: transparent;
     padding: 10px;
     border-radius: 10px;
     text-align: center;
@@ -239,6 +240,13 @@
   .infoDelete{
     font-family: "Montserrat Alternates", sans-serif;
     font-size: 12px;
+  }
+
+  @media screen and (max-width: 840px) {
+    .toHide{
+      background: crimson;
+      display: none;
+    }
   }
   
 

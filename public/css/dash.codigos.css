@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;500;700&family=Mochiy+Pop+One&family=Montserrat+Alternates:wght@100;200;400;600;800&display=swap');
+
+:root{
+    --colorh1 : rgb(226, 226, 226);
+    --gradiente: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(20,30,48,1) 0%, rgba(36,59,85,1) 100%);
+    --QUEM: rgb(108, 137, 222);
+    --fondo: rgb(235, 240, 269);
+      --primary: #243b55;
+      --hoverBotones: #121d29;
+    --fuente: roboto, sans-serif;
+    --letraNormal: 0.95rem;
+    --letraPeuqeña: 0.75rem;
+  }  
+
+   /*
+
+    font-family: 'Mochiy Pop One', sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Montserrat Alternates', sans-serif;
+  
+  */
+
+
+  #cont-generador{
+    background: crimson;
+  }

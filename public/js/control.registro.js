@@ -104,10 +104,22 @@ async function cargarUsuarios() {
 function mostrarUsuarios(usuarios = []) {
     usuarios.forEach(user => {
 
+        let idType = '';
+        if(user.tipoId == "1"){
+            idType = 'C.C';
+        } else if(user.tipoId == "2"){
+            idType = 'C.E';
+        } else if(user.tipoId == "3"){
+            idType = 'T.I';
+        }
+
         const html = `<tr class="row animate__animated animate__bounceIn">
                             <td class="__id">${user._id}</td>
                             <td>${user.name}</td>
                             <td>${user.nickname}</td>
+                            <td class="toHide">${user.email}</td>
+                            <td class="toHide">${idType}</td>
+                            <td class="toHide">${user.id}</td>
                             <td>${user.isMedic === 0 ? 'User' : 'Medic'}</td>
                             <td id="cont-actions">
                                 <a class="delete" href="#" title="Eliminar"><i class="fi fi-ss-trash"></i></a>
@@ -116,21 +128,6 @@ function mostrarUsuarios(usuarios = []) {
                         </tr>`
         data.insertAdjacentHTML('beforeend', html)
     });
-}
-
-function cargarAcciones() {
-    let btnsBorrar = document.querySelectorAll('.delete');
-    btnsBorrar.forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            borrar(e, btn)
-        })
-    })
-    let btnsEditar = document.querySelectorAll('.edit');
-    btnsEditar.forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            editarUser(e, btn)
-        })
-    })
 }
 
 function bdremover(userId) {
@@ -198,7 +195,7 @@ btnActualizar.addEventListener('click', async (e) => {
         })
             .then(response => {
                 if (response.ok) {
-                    console.log('Usuario actualizado correctamente');
+                    console.log('Usuario actualizado correctamente --Ramos--');
                     Swal.fire({
                         icon: 'success',
                         html: `<p class="infoPop">Usuario actualizado correctamente.</p>`,
@@ -207,6 +204,7 @@ btnActualizar.addEventListener('click', async (e) => {
                         confirmButtonColor: '#243b55',
                         width: '400'
                     });
+
                 } else {
                     throw new Error('Error al actualizar el usuario');
                 }
@@ -221,7 +219,7 @@ btnActualizar.addEventListener('click', async (e) => {
                     confirmButtonColor: '#243b55',
                     width: '400'
                 });
-                // Maneja el error de alguna manera adecuada en tu aplicación
+                
             });
 
         formEdit.reset()
@@ -234,7 +232,7 @@ btnActualizar.addEventListener('click', async (e) => {
             formEdit.classList.remove('animate__fadeOutUp')
             let usuarios = await cargarUsuarios()
             mostrarUsuarios(usuarios)
-
+            cargarAcciones()
         }, 500)
     }
 
@@ -431,3 +429,19 @@ function validarDatos(oldUser) {
     }
 
 }
+
+function cargarAcciones() {
+    let btnsBorrar = document.querySelectorAll('.delete');
+    btnsBorrar.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            borrar(e, btn)
+        })
+    })
+    let btnsEditar = document.querySelectorAll('.edit');
+    btnsEditar.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            editarUser(e, btn)
+        })
+    })
+}
+

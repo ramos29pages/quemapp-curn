@@ -3,7 +3,7 @@
     
     --colorInput: #80868b;
   
-    --fondo: #cccccc;
+    --fondo: #ececec;
       --primary: #243b55;
     --fuente: roboto, sans-serif;
     --letraNormal: 0.95rem;
@@ -24,7 +24,8 @@
     height: 100vh;
     padding: 5px;
     overflow: hidden;
-    background: var(--fondo);
+    
+    background: #ececec;
   }
 
   .cont-menu{
@@ -60,13 +61,14 @@
     height: 80%;
     border-radius: 6px;
     color: rgb(161, 161, 161);
-    background-color: var(--gradiente);
+    /* background-color: var(--gradiente); */
+    background: transparent;
     border: none;
     font-size: 20px;
 }
   
   .tab-button .active {
-    /*background-color: #e90606;*/
+    background-color: #e90606;
   }
   
   .tab-content {
@@ -77,9 +79,10 @@
   
   .tab-pane {
     display: none;
-    background: rgb(51, 81, 170);
+    /* background: rgb(51, 81, 170); */
     height: 90vh;
     padding: 10px;
+    background: #ececec!important;
   }
   
   .tab-pane.active {

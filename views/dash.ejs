@@ -12,7 +12,7 @@
     -->
 
     <!-- Live refresh CSS, HTML and JS in browser. -->
-    <!-- <script src="live.js" ></script> -->
+    <!-- <script src="../js/live.js" ></script> -->
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     
@@ -20,7 +20,9 @@
     <link rel="stylesheet" id="__tratamiento" href="">
     <link rel="stylesheet" id="__registro" href="">
     <link rel="stylesheet" id="__registrar" href="">
+    <link rel="stylesheet" id="__codigos" href="../css/dash.codigos.css">
     <link rel="stylesheet" href="../css/loader.css">
+    <link rel="stylesheet" href="../css/codeGenerator.css">
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-bold-straight/css/uicons-bold-straight.css'>
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-solid-straight/css/uicons-solid-straight.css'>
@@ -45,23 +47,15 @@
         <div class="tab-content">
 
             <!--@REGISTRAR SINTOMAS-->
-            <div class="tab-pane animate__animated animate__fadeIn animate__faster active" data-tab="section1">
-                <div class="cont-nameUser">
-                    <div class="infoUser">
-                        <h2>Hola, <span id="nameUser">Daniel Ramos</span></h2>
-                        <p>Administrador</p>
-                    </div>
-                    <div class="close-session">
-                        <i title="Cerrar Sesion" class="fi fi-ss-sign-out-alt"></i>
-                    </div>
-                </div>
+            <div class="tab-pane  active" data-tab="section1">
+                <%- include('cont-nameuser') %>
                 <hr>
-                <h3>Registro de lesiones por quemaduras</h3>
+                <h3 id="titulo-c1">Registro de lesiones por quemaduras</h3>
                 <div class="cont-contenido">
                     <div class="caracteristicas">
                         <form>
-                            <div class="column1">
-                                <div class="datos-paciente" >
+                           <div class="column1 ">
+                                <div class="datos-paciente animate__animated animate__bounceIn animate__faster" >
                                     <p class="titulo" style="font-weight: bold;">Caracteristicas del paciente</p>
                                     <div class="entrada">
                                             <label for="edad">Edad (Años)</label>
@@ -73,36 +67,46 @@
                                     </div>
                                     <div class="entrada">
                                             <label for="talla">Talla (cm)</label>
-                                            <input type="text" id="talla" name="talla" placeholder="CM">
+                                            <input type="text" id="talla" name="talla" placeholder="cm">
                                     </div>
                                 </div>
-                                <div class="agente-etiologico">
+                                <div class="agente-etiologico animate__animated animate__bounceIn">
                                     <p class="titulo" style="font-weight: bold;">Agente etiologico de la quemadura</p>
                                     <div class="entrada">
                                             <label for="Agente-fisico" >Agentes Fisicos</label>
                                             <select  id="Agente-fisico" name="AgenteFisico">
                                                 <option>Selecciona...</option>
-                                                <option>amarillo</option>
-                                                <option>verde</option>
-                                                <option>azul</option>
+                                                <option>Fuego</option>
+                                                <option>Vapor</option>
+                                                <option>Agua Caliente</option>
+                                                <option>Electricidad</option>
+                                                <option>Hielo</option>
+                                                <option>Polvora</option>
                                             </select>
                                     </div>
                                     <div class="entrada">
                                             <label for="Agente-quimico">Agentes Quimicos</label>
                                             <select id="Agente-quimico" name="AgenteQuimico">
                                                 <option>Selecciona...</option>
-                                                <option>amarillo</option>
-                                                <option>verde</option>
-                                                <option>azul</option>
+                                                <option>Acido</option>
+                                                <option>Acido sulfirico</option>
+                                                <option>Acido Clorhidrico</option>
+                                                <option>Acido Nitrico</option>
+                                                <option>Hidroxido de sodio</option>
+                                                <option>Hidroxido de potasio</option>
+                                                <option>Peroxido de hidrogeno</option>
+                                                <option>Cloro</option>
+                                                <option>Amoniaco</option>
+                                                <option>Agentes corrosivos, mercurio, plomo...</option>
                                             </select>
                                     </div>
                                     <div class="entrada">
                                             <label for="Agente-biologico">Agentes Biológicos</label>
                                             <select  id="Agente-biologico" name="AgenteBiologico">
                                                 <option>Selecciona...</option>
-                                                <option>amarillo</option>
-                                                <option>verde</option>
-                                                <option>azul</option>
+                                                <option>Radiacion Ultravioleta</option>
+                                                <option>Plantas venenosas</option>
+                                                <option>Corrosion Biologica</option>
                                             </select>
                                     </div>
                                 </div>
@@ -111,7 +115,7 @@
                                 </div>
                             </div>
 
-                            <div class="column2">
+                            <div class="column2 animate__animated animate__fadeIn animate__faster">
                                 <div class="cont-tipos">
                                     <h3 id="title">Caracteristicas de la quemadura</h3>
                                     <div class="quemaduras">
@@ -154,9 +158,10 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="column3">
+
+                            <div class="column3 ">
                                 <div class="cuerpo">
-                                    <div class="body" >
+                                    <div class="body animate__animated animate__bounceIn" >
                                         <h3>Superficie Corporal quemada</h3>
                                         <label for="cuerpo" >Partes del cuerpo</label>
                                         <select  id="cuerpo" name="parteCuerpo">
@@ -177,13 +182,14 @@
                                     class=" body imagenBody" alt="Body" srcset="../img/bodyFront.png" style="display: none;">
                                     <div class="cont-botones">
                                         <button class="anteriorCuerpo">Anterior</button>
-                                        <button class="siguienteCuerpo">Enviar Datos</button>
+                                        <button class="siguienteCuerpo">Completado !</button>
                                     </div>
                                 </div>
                             </div>
+
                             <div class="boton-final">
-                                <button id="boton">Enviar Datos</button>
-                            </div>
+                                <button id="boton">Completado !</button>
+                            </div> 
                         </form>
                     </div>
                 </div>  <!--Contenedor contenido-->
@@ -191,19 +197,26 @@
 
              <!--@TRATAMIENTO DE SINTOMAS-->
             <div class="tab-pane animate__animated animate__fadeIn animate__faster" data-tab="section2">
-                <div class="cont-nameUser">
-                    <div class="infoUser">
-                        <h2>Hola, <span id="nameUser">Daniel Ramos</span></h2>
-                        <p>Administrador</p>
-                    </div>
-                    <div class="close-session">
-                        <i title="Cerrar Sesion" class="fi fi-ss-sign-out-alt"></i>
-                    </div>
-                </div>
+                <%- include('cont-nameuser') %>
                 <hr>
                 <h2>Tratamientos</h2>
                 <div class="contenedor">
                     <div class="respuestas">
+                        <div class="respuesta">
+                            <p class="titulo">Daniel Ramos - 27/3/2023, 2:02:02 a. m.</p>
+                            <p class="res">Hello Wrol !!</p>
+                            <p class="res">Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita impedit corrupti sed nam dolorum. Asperiores, mollitia. Labore aspernatur praesentium, cupiditate adipisci, dolores voluptate animi, ratione necessitatibus facilis deserunt repudiandae sint.</p>
+                        </div>
+                        <div class="respuesta">
+                            <p class="titulo">Daniel Ramos - 27/3/2023, 2:02:02 a. m.</p>
+                            <p class="res">Hello Wrol !!</p>
+                            <p class="res">Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita impedit corrupti sed nam dolorum. Asperiores, mollitia. Labore aspernatur praesentium, cupiditate adipisci, dolores voluptate animi, ratione necessitatibus facilis deserunt repudiandae sint.</p>
+                        </div>
+                        <div class="respuesta">
+                            <p class="titulo">Daniel Ramos - 27/3/2023, 2:02:02 a. m.</p>
+                            <p class="res">Hello Wrol !!</p>
+                            <p class="res">Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita impedit corrupti sed nam dolorum. Asperiores, mollitia. Labore aspernatur praesentium, cupiditate adipisci, dolores voluptate animi, ratione necessitatibus facilis deserunt repudiandae sint.</p>
+                        </div>
                         <div class="respuesta">
                             <p class="titulo">Daniel Ramos - 27/3/2023, 2:02:02 a. m.</p>
                             <p class="res">Hello Wrol !!</p>
@@ -266,16 +279,7 @@
                         </div>
                     </form>
                 </div>
-
-                <div class="cont-nameUser">
-                    <div class="infoUser">
-                        <h2>Hola, <span id="nameUser">Daniel Ramos</span></h2>
-                        <p>Administrador</p>
-                    </div>
-                    <div class="close-session">
-                        <i title="Cerrar Sesion" class="fi fi-ss-sign-out-alt"></i>
-                    </div>
-                </div>
+                <%- include('cont-nameuser') %>
                 <hr>
                 <h2 id="titulo-registro">Control de Registros</h2>
                 <table clas="animate__animated animate__fadeIn animate__faster" id="tcontenedor">
@@ -283,6 +287,9 @@
                         <td>__id</td>
                         <td>Nombre</td>
                         <td>Apellido</td>
+                        <td class="toHide">Correo</td>
+                        <td class="toHide">Tipo ID</td>
+                        <td class="toHide">N° Identificacion</td>
                         <td>Rol</td>
                         <td>Acciones</td>
                     </thead>
@@ -294,12 +301,51 @@
 
              <!--@GENERAR CODIGOS-->
             <div class="tab-pane animate__animated animate__fadeIn animate__faster" data-tab="section4">
-                <h2>Generar Códigos</h2>
+                <%- include('cont-nameuser') %>
+                <hr>
+                <h2 id="titulo-registro">Generación de codigos de acceso.</h2>
+                <section class="cont-generar">
+                    <article class="cont-codigos">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Estado</th>
+                                    <th>Fecha generacion</th>
+                                    <th>Usuario</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="codigo-nuevo">
+                                    <td>xyzqwerty</td>
+                                    <td>Activo</td>
+                                    <td>1/8/2023, 12:31:23</td>
+                                    <td>12345</td>
+                                </tr>
+                                <tr class="codigo-antiguo">
+                                    <td>xyzqwerty</td>
+                                    <td>Usado</td>
+                                    <td>1/8/2023, 12:31:23</td>
+                                    <td>12345</td>
+                                </tr>
+                                <tr class="codigo-antiguo">
+                                    <td>xyzqwerty</td>
+                                    <td>Usado</td>
+                                    <td>1/8/2023, 12:31:23</td>
+                                    <td>12345</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </article>
+                    <button class="btn-newcode"><b>+</b></button>
+                </section>
             </div>
 
              <!--@RECOMENDACIONES-->
             <div class="tab-pane animate__animated animate__fadeIn animate__faster" data-tab="section5">
-                <h2>RECOMENDACIONES</h2>
+                <%- include('cont-nameuser') %>
+                <hr>
+                <h2 id="titulo-registro">Recomendaciones de la comunidad.</h2>
             </div>
         </div>
 
@@ -316,7 +362,7 @@
                     <i id="img-icon-contraido" title="QuemApp-LOgo" class="fa-solid fa-fire-flame-curved"></i>
                     <span id="titulo-logo-contraido">Quemapp</span>
                 </div>
-                <button title="Registrar" class="seccion tab-button active" data-tab="section1">
+                <button id="regHome" title="Registrar" class="seccion tab-button active" data-tab="section1">
                     <i id="icon-sec" class="fi fi-ss-treatment"></i>
                     <span class="titulo-seccion seccion1">Registrar sintomas</span>
                     <span class="title-phone phone1"></span>
@@ -352,6 +398,7 @@
         <script src="../js/control.registro.js"></script>
         <script src="../js/loader.js"></script>      
         <script src="../js/dash.registrar.js" ></script>
+        <script src="../js/codeGenerator.js"></script>
         
   </body>
 </html>
