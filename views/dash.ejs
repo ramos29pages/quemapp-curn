@@ -315,29 +315,13 @@
                                     <th>Usuario</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr class="codigo-nuevo">
-                                    <td>xyzqwerty</td>
-                                    <td>Activo</td>
-                                    <td>1/8/2023, 12:31:23</td>
-                                    <td>12345</td>
-                                </tr>
-                                <tr class="codigo-antiguo">
-                                    <td>xyzqwerty</td>
-                                    <td>Usado</td>
-                                    <td>1/8/2023, 12:31:23</td>
-                                    <td>12345</td>
-                                </tr>
-                                <tr class="codigo-antiguo">
-                                    <td>xyzqwerty</td>
-                                    <td>Usado</td>
-                                    <td>1/8/2023, 12:31:23</td>
-                                    <td>12345</td>
-                                </tr>
+                            <tbody id="contenedor-codigos-generados">
                             </tbody>
                         </table>
                     </article>
-                    <button class="btn-newcode"><b>+</b></button>
+                    <article class="cont-btn-newcode">
+                        <button class="btn-newcode"><b>+</b></button>
+                    </article>
                 </section>
             </div>
 
@@ -377,7 +361,7 @@
                     <span class="titulo-seccion seccion3">Control registro</span>
                     <span class="title-phone phone3"></span>
                 </button>
-                <button title="Generar Codigos" class="seccion tab-button" data-tab="section4">
+                <button title="Generar Codigos" id="btn-generar-codigos" class="seccion tab-button" data-tab="section4">
                     <i id="icon-sec" class="fi fi-ss-replace"></i>
                     <span class="titulo-seccion seccion4">Generar codigos</span>
                     <span class="title-phone phone4"></span>

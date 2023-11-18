@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,15 +7,14 @@
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <title>Contáctanos</title>
 </head>
-
 <body>
     <h1>Porfavor contacta con el administrador.</h1>
     <script>
         let pop = Swal.fire({
             icon: 'info',
-            title: '¿ Olvidaste tu contraseña ? ',
-            text: 'La entidad que administra la aplicación es responsable de administrar las contraseñas de los usuarios. \n Porfavor contacta con el administrador.😊',
-            footer: '<a href="/">Iniciar Sesion</a>',
+            title: '¿ Olvidaste tu codigo ? ',
+            text: 'La entidad que administra la aplicación es responsable de administrar los *codigos de acceso para los usuarios. \n Porfavor contacta con el administrador.😊',
+            footer: '<a href="/registrar">Quiero Registrarme</a>',
             allowOutsideClick: false,
             allowEscapeKey: false,
             allowEnterKey: false,
@@ -35,6 +33,9 @@
     font-family: 'Montserrat Alternates', sans-serif;
   
   */
+        #acento{
+            font-weight: bold;
+        }
 
         .swal2-popup {
             font-family: 'Montserrat Alternates', sans-serif;
@@ -58,5 +59,4 @@
         }
     </style>
 </body>
-
 </html>

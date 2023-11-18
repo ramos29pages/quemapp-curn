@@ -1,27 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;500;700&family=Mochiy+Pop+One&family=Montserrat+Alternates:wght@100;200;400;600;800&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700&display=swap');
+
+/*
+
+font-family: 'Mochiy Pop One', sans-serif;
+font-family: 'Source Sans Pro', sans-serif;
+font-family: 'Montserrat Alternates', sans-serif;
+
+*/
+
+
+
+
 .root {
     box-sizing: border-box;
     padding: 0px;
     margin: 0px;
 }
 
-body {
-    overflow: hidden;
-}
-
-
 .cont-generar {
     padding: 10px;
     height: calc(100vh - 10px);
     display: grid;
+    grid-template-rows: 1fr 60px;
     align-content: flex-start;
-    max-height: 90vh;
+    max-height: 68vh;
     width: 100vw;
     max-width: 93vw;
     overflow: none;
     /* background: rgb(210, 210, 210); */
     /* background: #e0e0e0; */
-    position: relative;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Montserrat Alternates', sans-serif;
 }
 
 .cont-generar h2 {
@@ -37,7 +47,7 @@ body {
     padding: 5px;
     border-radius: 50px;
     background: #e0e0e0;
-    max-height: 400px;
+    height: auto;
     border-radius: 10px;
     display: grid;
     align-items: flex-start;
@@ -71,20 +81,24 @@ body {
     border-radius: 5px;
     padding: 5px;
     text-align: center;
-    
+    font-size: 12px;
+}
+
+.cont-btn-newcode{
+    margin: 5px;
+    display: grid;
+    justify-content: end;
 }
 
 button.btn-newcode {
-    position: absolute;
-    background: royalblue;
+    background-color: #243b55;
     color: white;
     height: 50px;
     width: 50px;
     border-radius: 50%;
     border: none;
     font-size: 22px;
-    bottom: 23vh;
-    right: 20px;
+    right: 35px;
     transition: all .3s ease-in-out;
 }
 
@@ -95,7 +109,7 @@ button.btn-newcode:hover {
     color: white;
 }
 
-button:hover::after {
+button.btn-newcode:hover::after {
     position: absolute;
     top: -12px;
     color: white;
@@ -124,12 +138,13 @@ button:hover::after {
     color: rgb(8, 202, 50);
 }
 
+/*PANTALLAS GRANDES*/
 
 @media screen and (min-width: 768px) {
     .cont-generar {
-        width: 100vw;
-        max-width: 98vw;
-
+        width: 93vw;
+        max-width: 94vw;
+        height: 100vh;
     }
 
     .cont-codigos {

@@ -1,5 +1,6 @@
 const { Configuration, OpenAIApi } = require("openai");
-const apiKey = "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"
+const apiKey = "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"
+
 
 const configuration = new Configuration({
   apiKey: apiKey,
@@ -9,6 +10,7 @@ const openai = new OpenAIApi(configuration);
 async function gerenacion(user) {
 
   let User = user;
+  console.log("DATA IN GPT RAMOSDEV");
 
  /*  let prompt = `Hola estoy en un sitio el cual no posee acceso a servicios de salud
   y sufrí una quemadura en la parte del ${User.parteCuerpo}de ${User.grado}, tengo una estatura de ${User.talla}, con una edad de ${User.edad}
@@ -26,7 +28,7 @@ async function gerenacion(user) {
   respuesta = completion.data.choices[0].message.content;
 
   if(respuesta){
-    console.log("success", respuesta);
+    console.log("success - GPT.JS -> ", respuesta);
     return respuesta;
   } else {
     return ' GPT TUVO INCONVENIENTES PARA ENTENDERTE.';

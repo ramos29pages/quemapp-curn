@@ -1,5 +1,6 @@
 
 const User = require('../mongo/User');
+const Code = require('../mongo/Code');
 const bcrypt = require('bcrypt');
 const GenerarDiagnostico = require('./gpt');
 const session = require('express-session');
@@ -43,7 +44,7 @@ exports.vistaDash = async (req, res) => {
       username: req.session.username,
       userrol: 'Superadministrador'
     });
-  } else if( !(req.session?.userrol) ){
+  } else if (!(req.session?.userrol)) {
     res.redirect('/home');
   }
 
@@ -104,6 +105,17 @@ exports.obtenerUsuarios = async (req, res) => {
   try {
     const users = await User.find({});
     res.send(users);
+
+  } catch (error) {
+    console.error('Ocurrió un error al obtener los usuarios:', error);
+    res.status(500).send('Ocurrió un error al obtener los usuarios.');
+  }
+};
+
+exports.obtenerCodigos = async (req, res) => {
+  try {
+    const codes = await Code.find({});
+    res.send(codes);
 
   } catch (error) {
     console.error('Ocurrió un error al obtener los usuarios:', error);
@@ -213,5 +225,55 @@ exports.login = async (req, res) => {
   }
 };
 
+exports.contactos = async (req, res) => {
+  res.render('contactos');
+};
+
+exports.getCode = async (req, res) => {
+  res.render('solicitar-codigo');
+};
 
 
+exports.inactivarCodigos = async (req, res) => {
+  try {
+    await Code.updateMany({ status: 'Active' }, { $set: { status: 'Inactive' } });
+    res.send('Actualización exitosa');
+  } catch (error) {
+    res.status(500).send('Hubo un error al actualizar el estado');
+  }
+};
+
+exports.guardarCodigo = async (req, res) => {
+  try {
+    let newCode = new Code(req.body);
+    await newCode.save();
+    res.send('Se ha añadido un nuevo codigo.');
+  } catch (error) {
+    res.status(500).send('Hubo un error al añadir el código');
+  }
+};
+
+exports.usarCodigo = async (req, res) => {
+  try {
+    let code = req.body.code;
+    console.log(req.body);
+    console.log('CODIGO RECIBIDO::-->:: ', code);
+    let codeInDb = await Code.findOne({ code: code});
+
+    if (codeInDb) {
+      let codeAndStatusInDb = await Code.findOne({ code: code, status: 'Active' });
+      if(codeAndStatusInDb){
+        // Cambiar el estado a 'Inactive'
+        codeAndStatusInDb.status = 'Inactive';
+        await codeAndStatusInDb.save();
+        res.json({ message: 'El codigo es valido.', status: true });
+      }else {
+        res.json({ message: 'El codigo proporcionado ya ha sido utilizado.', status: false });
+      }
+    } else {
+      res.json({ message: 'El código proporcionado no es válido.', status: false });
+    }
+  } catch (error) {
+    res.status(500).send('Hubo un error al registrar al usuario');
+  }
+};

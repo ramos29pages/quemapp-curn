@@ -59,7 +59,7 @@ boton.addEventListener('click', async (ramos)=>{
     if(password.length < 1){
         infoPass.textContent = 'La contraseña es requerida.*';
         document.getElementById('password').classList.add('err');
-    }else if(password.length >10 ){
+    }else if(password.length >60 ){
         infoPass.textContent = 'Limite de caracteres excedido.';
         document.getElementById('password').classList.add('err');
     }else{
