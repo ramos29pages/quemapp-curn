@@ -7,8 +7,8 @@ let oldUser = {}
 //const btnEditar = document.querySelector('#boton-prueba')
 const contFormEdit = document.querySelector('.cont-editar');
 const formEdit = document.querySelector('.form-editar');
-const btnCancelar = document.querySelector('.del')
-const btnActualizar = document.querySelector('.act')
+const btnCancelar = document.querySelector('.del');
+const btnActualizar = document.querySelector('#actualizarUser');
 let informacion = '';
 
 btnControlRegistro.addEventListener('click', async (e) => {
@@ -18,7 +18,6 @@ btnControlRegistro.addEventListener('click', async (e) => {
     mostrarUsuarios(usuarios)
     cargarAcciones()
 })
-
 
 async function loader() {
     const div = document.createElement('div')
@@ -71,8 +70,11 @@ async function borrar(event, btn) {
                         popup: 'custom-sweetalert',
                       },
                 }
-            )
+            );
+
+            cargarUsuarios();
         }
+
     })
 
 
@@ -86,7 +88,7 @@ async function editarUser(event, btn) {
     let userToEdit = await fetch(`/usuarios/${userId}`)
     //almacenamos el usuario seleccionado
     let user = await userToEdit.json()
-    //console.log('User:::: ',user)
+    console.log('User to edit :::: ',user)
 
     //datos a formulario de edicion
     let oldUser = await cargarDatosForm(user)
@@ -168,7 +170,7 @@ btnCancelar.addEventListener('click', (e) => {
 btnActualizar.addEventListener('click', async (e) => {
     e.preventDefault()
     e.stopPropagation()
-    let estadoValidacion = await validarDatos()
+    let estadoValidacion = await validarDatos();
 
     if (!estadoValidacion) {
         Swal.fire({
@@ -176,12 +178,13 @@ btnActualizar.addEventListener('click', async (e) => {
             confirmButtonText: 'Corregir',
             width: '400',
             html: `
-            
             ${informacion}
-            
             `
         });
+
+        console.log("NUEVO USUARIO LISTO PARA ACTUALIZAR", estadoValidacion);
     }
+
 
     if (estadoValidacion) {
         let newUser = estadoValidacion
@@ -296,7 +299,7 @@ function cargarDatosForm(user) {
 
 }
 
-function validarDatos(oldUser) {
+function validarDatos() {
     let editNameInput = document.getElementById('editName')
     let editNicknameInput = document.getElementById('editNickname')
     let editTipoIdInput = document.getElementById('editTipoId')
@@ -407,7 +410,7 @@ function validarDatos(oldUser) {
 
     }
 
-    let validar = validarCampos()
+    let validar = validarCampos();
 
     if (!validar) {
         return false;

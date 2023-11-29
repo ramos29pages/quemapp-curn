@@ -13,7 +13,7 @@ const titulo_c1 = d.querySelector('#titulo-c1');
 const respuesta = d.querySelector('.respuesta');
 const contRespuestas = d.querySelector('.respuestas');
 const regHome = d.getElementById('regHome');
-
+let btnAccion = null;
 const botonGenerar = d.getElementById('boton');
 
 const loaderPage = d.querySelector('.loader-section')
@@ -74,7 +74,8 @@ btnColumn3Siguiente.addEventListener('click', async (dr) => {
     let datos = await validarDatos();
     if (datos && datos.valid) {
         let botonAccion = dr.target;
-        // form.reset();
+        form.reset();
+        console.log("RESTART FORM :: ", form);
         botonAccion.style.visibility = 'hidden';
         console.log(' DATOS ', datos);
         sendData(botonAccion, datos);
@@ -87,13 +88,12 @@ botonGenerar.addEventListener('click', async (e) => {
     e.stopPropagation();
     let datos = await validarDatos();
     if (datos && datos.valid) {
-        // form.reset();
-        /* let botonAccion = e.target;
-        botonAccion.style.visibility = 'hidden'; */
+        form.reset();
+        let botonAccion = e.target;
+        botonAccion.style.visibility = 'hidden';
         console.log(botonAccion);
-        // sendData(botonAccion, datos);
+        sendData(botonAccion, datos);
     }
-
 
 });
 
@@ -261,51 +261,16 @@ async function validarDatos() {
 }
 
 async function sendData(botonAccion, datos) {
-    let btnAccion = botonAccion;
+    btnAccion = botonAccion;
     let user = await getData(datos.agent);
     let body = await JSON.stringify(user);
     let animation = 1;
-    console.log('BOTON DE ACCION :: ->',btnAccion.innerText);
+    console.log('BOTON DE ACCION :: ->', btnAccion.innerText);
     console.log('USER OBEJCT :: -> ', body);
-    // console.log(body);
+    form.reset();
     const response = await sendMessageToChatGPT(body);
     console.log('respuesta de GPT :: ', response);
-
-
-
-/*     //Creando div para seccion tratamientos
-    let div = d.createElement('div');
-    div.classList.add('respuesta');
-    let p = d.createElement('p');
-    p.classList.add('titulo');
-    p.innerText = 'Respuesta generada - ' + new Date().toLocaleString();
-    div.appendChild(p);
-    let p2 = d.createElement('p');
-    p2.classList.add('res');
-    p2.innerText = response;
-    div.appendChild(p2);
-
-    contRespuestas.appendChild(div);
-
-    setTimeout(() => {
-        Swal.fire(
-            {
-                html: '<p class="infoPop" >Respuesta generada con exito. Puedes verla en la seccion de tratamientos.</p>',
-                icon: 'success',
-                showConfirmButton: true,
-                confirmButtonText: 'ver en tratamientos',
-                confirmButtonColor: '#243b55',
-                width: '400'
-            }
-        ).then((res) => {
-            console.log(res);
-            if (res.isConfirmed) {
-                btnAccion.style.visibility = 'visible';
-                showTratamientos();
-            }
-
-        });
-    }, 3000); */
+    crearTratamiento(response);
 
 }
 
@@ -352,13 +317,62 @@ async function sendMessageToChatGPT(user) {
     });
 
     let data = await response.json();
-    console.log('DATOS DE RUTA **/CHAT**',data);
+    console.log('DATOS DE RUTA **/CHAT**', data);
     return data.response;
 };
 
 
 function crearTratamiento(response) {
-    
+
+    //Creando div para seccion tratamientos
+    let div = d.createElement('div');
+    div.classList.add('respuesta');
+    let p = d.createElement('p');
+    p.classList.add('titulo');
+    p.innerText = 'Respuesta generada - ' + new Date().toLocaleString();
+    div.appendChild(p);
+    let p2 = d.createElement('p');
+    p2.classList.add('res');
+    p2.innerText = response;
+    div.appendChild(p2);
+
+
+    contRespuestas.insertAdjacentElement("afterbegin", div);
+
+    setTimeout(() => {
+        Swal.fire(
+            {
+                html: '<p class="infoPop" >Respuesta generada con exito. Puedes verla en la seccion de tratamientos.</p>',
+                icon: 'success',
+                showConfirmButton: true,
+                confirmButtonText: 'ver en tratamientos',
+                confirmButtonColor: '#243b55',
+                width: '400'
+            }
+        ).then((res) => {
+            console.log(res);
+            if (res.isConfirmed) {
+                btnAccion.style.visibility = 'visible';
+                showTratamientos();
+            }
+
+        });
+    }, 3000);
+
+
+    console.log(window.innerWidth);
+    if (window.innerWidth <= 500) {
+        column2.style.display = 'none';
+        column3.style.display = 'none';
+        column1.style.display = 'block';
+        titulo_c1.style.display = 'block';
+    } else {
+        column2.style.display = 'block';
+        column3.style.display = 'grid';
+        column1.style.display = 'block';
+        titulo_c1.style.display = 'block';
+    }
+
 }
 
 

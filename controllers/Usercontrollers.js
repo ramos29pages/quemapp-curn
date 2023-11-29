@@ -233,7 +233,6 @@ exports.getCode = async (req, res) => {
   res.render('solicitar-codigo');
 };
 
-
 exports.inactivarCodigos = async (req, res) => {
   try {
     await Code.updateMany({ status: 'Active' }, { $set: { status: 'Inactive' } });
@@ -277,3 +276,6 @@ exports.usarCodigo = async (req, res) => {
     res.status(500).send('Hubo un error al registrar al usuario');
   }
 };
+
+
+
